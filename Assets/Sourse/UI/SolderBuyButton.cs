@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ButtonClickCooldown : MonoBehaviour
+public class SolderBuyButton : MonoBehaviour
 {
     [SerializeField] private float _clickCooldown = 4;
 

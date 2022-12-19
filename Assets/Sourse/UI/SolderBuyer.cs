@@ -41,6 +41,6 @@ public class SolderBuyer : MonoBehaviour
     public void BuySolder()
     {
         _playerMoney.DecreaseMoney(_cost);
-        //SoldersSpawner.Instance.SpawnSolders();
+        SoldersSpawner.Instance.SpawnSolders();
     }
 }
