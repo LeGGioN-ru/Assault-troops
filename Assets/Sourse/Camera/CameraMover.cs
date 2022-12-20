@@ -4,11 +4,13 @@ using UnityEngine;
 public class CameraMover : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _background;
+    [SerializeField] private CameraScrollbarView _cameraScrollbar;
 
     private Camera _camera;
     private Vector3 dragOrigin;
 
-    private float _backgroundMinX, _backgroundMaxX, _backgroundMinY, _backgroundMaxY;
+    private float _backgroundMinX, _backgroundMaxX;
+    private float _cameraWidth;
 
     private void Start()
     {
@@ -17,8 +19,7 @@ public class CameraMover : MonoBehaviour
         _backgroundMinX = _background.transform.position.x - _background.bounds.size.x /2f;
         _backgroundMaxX = _background.transform.position.x + _background.bounds.size.x /2f;
 
-        _backgroundMinY = _background.transform.position.y - _background.bounds.size.y /2f;
-        _backgroundMaxY = _background.transform.position.y + _background.bounds.size.y /2f;
+        _cameraWidth = _camera.orthographicSize * _camera.aspect;
     }
 
     private void Update()
@@ -35,23 +36,21 @@ public class CameraMover : MonoBehaviour
         {
             Vector3 difference = dragOrigin - _camera.ScreenToWorldPoint(Input.mousePosition);
 
-            _camera.transform.position = ClapmCamera(_camera.transform.position + difference);
+            Vector3 newX = new Vector3(ClapmCamera(_camera.transform.position.x + difference.x), _camera.transform.position.y, _camera.transform.position.z);
+            _camera.transform.position = newX;
         }
     }
 
-    private Vector3 ClapmCamera(Vector3 targetPosition)
+    private float ClapmCamera(float targetPositionX)
     {
-        float cameraHeight = _camera.orthographicSize;
-        float cameraWidth = _camera.orthographicSize * _camera.aspect;
+        float minX = _backgroundMinX + _cameraWidth;
+        float maxX = _backgroundMaxX - _cameraWidth;
 
-        float minX = _backgroundMinX + cameraWidth;
-        float maxX = _backgroundMaxX - cameraWidth;
-        float minY = _backgroundMinY + cameraHeight;
-        float maxY = _backgroundMaxY - cameraHeight;
+        float newX = Mathf.Clamp(targetPositionX, minX, maxX);
 
-        float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
-        float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
+        float distance = maxX - minX;
+        _cameraScrollbar.MoveScrollbar(newX / distance);
 
-        return new Vector3(newX, newY, targetPosition.z);
+        return newX;
     }
 }
