@@ -270,9 +270,14 @@ GameObject:
   m_Component:
   - component: {fileID: 130192951}
   - component: {fileID: 130192952}
-  - component: {fileID: 130192954}
   - component: {fileID: 130192955}
+  - component: {fileID: 130192954}
   - component: {fileID: 130192956}
+  - component: {fileID: 130192957}
+  - component: {fileID: 130192958}
+  - component: {fileID: 130192960}
+  - component: {fileID: 130192959}
+  - component: {fileID: 130192961}
   m_Layer: 0
   m_Name: UserSolier
   m_TagString: Untagged
@@ -359,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f989afb2403aa2f47aad84edbe231121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 20
 --- !u!61 &130192955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,6 +404,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: {x: 8.81, y: 22.61, z: 0}
+--- !u!114 &130192957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130192950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d54de9dfc3cff4b96908e6236a5717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstState: {fileID: 130192958}
+--- !u!114 &130192958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130192950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c70c31f472a2f45a0d926300ae1a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 130192960}
+  _speed: 3
+  _direction: {x: 1, y: 0}
+--- !u!114 &130192959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130192950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73603b397189f4b4e878b3ef68b3187a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 130192961}
+  _damage: 2
+  _attackSpeed: 3
+--- !u!114 &130192960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130192950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03a7217126f70d44a09ef3863860be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 130192959}
+--- !u!114 &130192961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130192950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3032ed27003da469aa4ffb8631409c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 130192958}
 --- !u!1 &311537663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f989afb2403aa2f47aad84edbe231121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 4
 --- !u!50 &1996674136
 Rigidbody2D:
   serializedVersion: 4

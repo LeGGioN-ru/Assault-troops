@@ -19,8 +19,12 @@ public abstract class State : MonoBehaviour
     public void Exit()
     {
         if (enabled)
+        {
+            enabled = false;
+
             foreach (Transition transition in _transitions)
                 transition.enabled = false;
+        }
     }
 
     public State TryGetNextState()

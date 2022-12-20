@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Solider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float _health;
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyDamage(float damage)
     {
-        
+        _health -= damage;
+
+        if(_health<=0)
+            Destroy(gameObject);
     }
 }
