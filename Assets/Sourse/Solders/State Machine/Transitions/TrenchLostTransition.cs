@@ -12,8 +12,6 @@ public class TrenchLostTransition : Transition
 
     private void Update()
     {
-        Debug.Log("ha");
-
         if (_solider.IsHasTrench == false)
             IsNeedTransit = true;
     }

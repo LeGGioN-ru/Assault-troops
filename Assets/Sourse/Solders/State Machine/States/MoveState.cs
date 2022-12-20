@@ -7,6 +7,6 @@ public class MoveState : State
 
     private void Update()
     {
-        transform.Translate(_direction * _speed * Time.deltaTime);
+        transform.Translate(_speed * Time.deltaTime * _direction);
     }
 }
