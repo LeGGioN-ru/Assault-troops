@@ -276,14 +276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Solder (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: _indentPivot.x
-      value: 4.94
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
 --- !u!114 &1887025651 stripped

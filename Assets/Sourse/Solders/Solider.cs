@@ -2,28 +2,30 @@ using UnityEngine;
 
 public class Solider : MonoBehaviour
 {
-    [SerializeField] private float _health;
+    [SerializeField] private float _maxHealth;
     [SerializeField] private bool _isPlayerTeam;
     [SerializeField] private float _percentMiss;
 
     private bool _isInTrench;
     private readonly int _maxPercent = 100;
     private float _trenchPercentMiss;
+    private float _currentHealth;
 
-    public float Health => _health;
+    public float CurrentHealth => _currentHealth;
     public bool IsPlayerTeam => _isPlayerTeam;
     public bool IsInTrench => _isInTrench;
 
+    private void OnEnable()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     public void ApplyDamage(float damage)
     {
-        if (Random.Range(0, _maxPercent + 1) > _percentMiss)
-        {
-            ReduceHealth(damage);
-        }
-        else
-        {
-            ReduceHealth(damage);
-        }
+        if (Random.Range(0, _maxPercent + 1) <= _percentMiss)
+            return;
+
+        ReduceHealth(damage);
     }
 
     private void Die()
@@ -33,7 +35,7 @@ public class Solider : MonoBehaviour
 
     private void ReduceHealth(float damage)
     {
-        _health -= damage;
+        _currentHealth -= damage;
     }
 
     public void SitTrench(float percentMiss)

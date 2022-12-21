@@ -12,7 +12,7 @@ public class HealthEndTransition : Transition
 
     private void Update()
     {
-        if (_solider.Health <= 0)
+        if (_solider.CurrentHealth <= 0)
             IsNeedTransit = true;
     }
 }
