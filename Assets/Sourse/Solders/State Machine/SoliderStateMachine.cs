@@ -9,7 +9,7 @@ public class SoliderStateMachine : MonoBehaviour
 
     public State CurrentState => _currentState;
 
-    private void Start()
+    private void OnEnable()
     {
         Reset(_firstState);
     }
@@ -27,6 +27,9 @@ public class SoliderStateMachine : MonoBehaviour
 
     private void Reset(State startState)
     {
+        if (_currentState != null)
+            _currentState.enabled = false;
+
         _currentState = startState;
 
         if (_currentState != null)

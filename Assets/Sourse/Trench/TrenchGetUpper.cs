@@ -14,7 +14,10 @@ public class TrenchGetUpper : MonoBehaviour
             {
                 if (collider.TryGetComponent(out Solider solider))
                 {
-                    if (collider.TryGetComponent(out AttackState attackState))
+                    if (solider.IsPlayerTeam == false)
+                        return;
+
+                    if (collider.TryGetComponent(out AttackState attackState) && solider.IsPlayerTeam)
                     {
                         if (attackState.enabled == false)
                             solider.GetUpTrech();

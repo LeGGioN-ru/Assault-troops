@@ -277,11 +277,26 @@ PrefabInstance:
       value: Solder (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: _indentPivot.x
       value: 4.94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
+--- !u!114 &1887025651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8359415716762079895, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+  m_PrefabInstance: {fileID: 2233805521953572494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03a7217126f70d44a09ef3863860be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2233805521953572494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,6 +304,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2233805521575145302, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+      propertyPath: _transitions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233805521575145302, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+      propertyPath: _transitions.Array.data[0]
+      value: 
+      objectReference: {fileID: 1887025651}
+    - target: {fileID: 2233805521575145302, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+      propertyPath: _transitions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1887025651}
     - target: {fileID: 8359415716762079884, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -333,13 +360,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8359415716762079891, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359415716762079891, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
+      propertyPath: _indentPivot.x
+      value: -5.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8359415716762079893, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
       propertyPath: m_Name
       value: SolderEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8359415716762079893, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4658edc10ede94144a9aaa1705055e0c, type: 3}
