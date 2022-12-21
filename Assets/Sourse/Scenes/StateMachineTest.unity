@@ -228,18 +228,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7710881663751996330, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7710881663751996330, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7710881663751996330, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996331, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -287,10 +275,6 @@ PrefabInstance:
     - target: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_Name
       value: Solder
-      objectReference: {fileID: 0}
-    - target: {fileID: 7710881663751996341, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-      propertyPath: _isPlayerTeam
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
