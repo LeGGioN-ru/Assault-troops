@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _isPlayerTeam: 1
+  _percentMiss: 0
 --- !u!114 &7710881663751996340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467a6b88b46685e43b95d4cb190ca429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: {x: 5.95, y: 2.95, z: 0}
+  _distance: {x: 8.94, y: 20.43, z: 0}
+  _indentPivot: {x: 4.62, y: 0.79}
 --- !u!114 &7710881663751996343
 MonoBehaviour:
   m_ObjectHideFlags: 0

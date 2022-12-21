@@ -4,22 +4,21 @@ public class Solider : MonoBehaviour
 {
     [SerializeField] private float _health;
     [SerializeField] private bool _isPlayerTeam;
+    [SerializeField] private float _percentMiss;
 
-    private Trench _currentTrench;
+    private bool _isInTrench;
     private readonly int _maxPercent = 100;
+    private float _trenchPercentMiss;
 
     public float Health => _health;
     public bool IsPlayerTeam => _isPlayerTeam;
-    public bool IsHasTrench => _currentTrench != null;
+    public bool IsInTrench => _isInTrench;
 
     public void ApplyDamage(float damage)
     {
-        if (_currentTrench != null)
+        if (Random.Range(0, _maxPercent + 1) > _percentMiss)
         {
-            if (Random.Range(0, _maxPercent + 1) > _currentTrench.PercentMiss)
-            {
-                ReduceHealth(damage);
-            }
+            ReduceHealth(damage);
         }
         else
         {
@@ -37,13 +36,17 @@ public class Solider : MonoBehaviour
         _health -= damage;
     }
 
-    public void SitTrench(Trench trench)
+    public void SitTrench(float percentMiss)
     {
-        _currentTrench = trench;
+        _isInTrench = true;
+        _trenchPercentMiss += percentMiss;
+        _percentMiss += _trenchPercentMiss;
     }
 
     public void GetUpTrech()
     {
-        _currentTrench = null;
+        _isInTrench = false;
+        _percentMiss -= _trenchPercentMiss;
+        _trenchPercentMiss = 0;
     }
 }

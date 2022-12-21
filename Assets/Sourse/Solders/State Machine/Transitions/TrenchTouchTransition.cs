@@ -12,7 +12,7 @@ public class TrenchTouchTransition : Transition
 
     private void Update()
     {
-        if (_solider.IsHasTrench)
+        if (_solider.IsInTrench)
             IsNeedTransit = true;
     }
 }

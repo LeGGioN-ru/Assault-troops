@@ -12,7 +12,7 @@ public class TrenchLostTransition : Transition
 
     private void Update()
     {
-        if (_solider.IsHasTrench == false)
+        if (_solider.IsInTrench == false)
             IsNeedTransit = true;
     }
 }
