@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemySoliderFinder))]
+[RequireComponent(typeof(Animator))]
 public class AttackState : State
 {
     [SerializeField] private float _damage;
@@ -12,6 +13,11 @@ public class AttackState : State
     private void Start()
     {
         _enemySoliderFinder = GetComponent<EnemySoliderFinder>();
+    }
+
+    private void OnEnable()
+    {
+        PlayAnimation(SoliderAnimationController.States.Attack);
     }
 
     private void Update()

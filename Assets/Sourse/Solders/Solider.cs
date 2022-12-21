@@ -3,10 +3,13 @@ using UnityEngine;
 public class Solider : MonoBehaviour
 {
     [SerializeField] private float _health;
+    [SerializeField] private bool _isPlayerTeam;
 
     private Trench _currentTrench;
-    private int _maxPercent = 100;
+    private readonly int _maxPercent = 100;
 
+    public float Health => _health;
+    public bool IsPlayerTeam => _isPlayerTeam;
     public bool IsHasTrench => _currentTrench != null;
 
     public void ApplyDamage(float damage)
@@ -22,9 +25,11 @@ public class Solider : MonoBehaviour
         {
             ReduceHealth(damage);
         }
+    }
 
-        if (_health <= 0)
-            Destroy(gameObject);
+    private void Die()
+    {
+        gameObject.SetActive(false);
     }
 
     private void ReduceHealth(float damage)

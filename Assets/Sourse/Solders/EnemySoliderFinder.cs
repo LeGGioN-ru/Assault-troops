@@ -47,7 +47,6 @@ public class EnemySoliderFinder : MonoBehaviour
             return false;
 
         return true;
-        //Доп проверка на команду
     }
 
 
