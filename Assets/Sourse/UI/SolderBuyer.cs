@@ -6,7 +6,7 @@ public class SolderBuyer : MonoBehaviour
 {
     [SerializeField] private int _cost;
     [SerializeField] private TMP_Text _costText;
-    [SerializeField] private PlayerMoney _playerMoney;
+    [SerializeField] private Wallet _playerMoney;
     [SerializeField] private Image _blockClickPanel;
 
     private void OnEnable()

@@ -21,7 +21,7 @@ public class SoldersSpawner : ObjectPool
 
     private void Start()
     {
-        Initialize(_solderPrefab);   
+        Initialize(_solderPrefab);
     }
 
     private void SetEnemy(GameObject enemy, Vector3 spawnPoint)

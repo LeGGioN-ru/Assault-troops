@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
 
-public class PlayerMoney : MonoBehaviour
+public class Wallet : MonoBehaviour
 {
     [SerializeField] private int _startMoney;
     [SerializeField] private float _incomeTime;
+    [SerializeField] private int _moneyIncome = 10;
 
-    private int _moneyIncome = 10;
     private float _currentTime = 0;
     private int _currentMoney;
 
