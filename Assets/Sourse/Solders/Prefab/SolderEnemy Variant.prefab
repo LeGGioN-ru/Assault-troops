@@ -73,11 +73,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_Name
-      value: SolderEnemy
+      value: SolderEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
+      propertyPath: _indentPivot.x
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996341, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: _isPlayerTeam

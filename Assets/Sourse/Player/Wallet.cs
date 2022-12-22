@@ -11,7 +11,7 @@ public class Wallet : MonoBehaviour
     private int _currentMoney;
 
     public event Action<int> ChangeMoneysCount;
-    public int MoneyCount => _moneyIncome;
+    public int MoneyCount => _currentMoney;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class Wallet : MonoBehaviour
     {
         _currentTime += Time.deltaTime;
 
-        if(_currentTime >= _incomeTime)
+        if (_currentTime >= _incomeTime)
         {
             _currentTime = 0f;
             _currentMoney += _moneyIncome;

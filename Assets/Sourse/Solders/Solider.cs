@@ -5,12 +5,14 @@ public class Solider : MonoBehaviour
     [SerializeField] private float _maxHealth;
     [SerializeField] private bool _isPlayerTeam;
     [SerializeField] private float _percentMiss;
+    [SerializeField] private float _impact;
 
     private bool _isInTrench;
     private readonly int _maxPercent = 100;
     private float _trenchPercentMiss;
     private float _currentHealth;
 
+    public float Impact => _impact;
     public float CurrentHealth => _currentHealth;
     public bool IsPlayerTeam => _isPlayerTeam;
     public bool IsInTrench => _isInTrench;

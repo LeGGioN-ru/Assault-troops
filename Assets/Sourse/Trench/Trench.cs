@@ -6,8 +6,9 @@ public class Trench : MonoBehaviour
 {
     [SerializeField] private float _percentMiss;
 
-    private List<Solider> _solidersIn = new List<Solider>();
+    private readonly List<Solider> _solidersIn = new List<Solider>();
 
+    public float Impact => _solidersIn.Sum(solider => solider.Impact);
     public float PercentMiss => _percentMiss;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +18,7 @@ public class Trench : MonoBehaviour
         if (solider == null)
             return;
 
-        bool isTrenchFreeOrBusy = _solidersIn.Count == 0 || _solidersIn.All(soliderTeam => soliderTeam.IsPlayerTeam == solider.IsPlayerTeam);
+        bool isTrenchFreeOrBusy = _solidersIn.Count == 0 || IsTrenchBusy(solider.IsPlayerTeam);
 
         if (isTrenchFreeOrBusy == false)
             return;
@@ -31,5 +32,18 @@ public class Trench : MonoBehaviour
         if (collision.TryGetComponent(out Solider solider))
             if (_solidersIn.Contains(solider))
                 _solidersIn.Remove(solider);
+    }
+
+    public bool IsTrenchBusy(bool isPlayerTeam)
+    {
+        if (_solidersIn.Count == 0)
+            return false;
+
+        return _solidersIn.All(soliderTeam => soliderTeam.IsPlayerTeam == isPlayerTeam);
+    }
+
+    public void GetUpAllSoliders()
+    {
+        _solidersIn.ForEach(solider => solider.GetUpTrech());
     }
 }
