@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonCameraMoverRight : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ButtonCameraMover : CanNormilizeValue, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private CameraMover _mover;
     [SerializeField] private CameraData _data;
@@ -41,8 +41,8 @@ public class ButtonCameraMoverRight : MonoBehaviour, IPointerDownHandler, IPoint
     {
         _data.Camera.transform.position = Vector3.MoveTowards(_data.Camera.transform.position, newPosition, 5f * Time.deltaTime);
 
-        float distance = _data.CameraMaxX - _data.CameraMinX;
-        _data.CameraScrollbar.MoveScrollbar(_data.Camera.transform.position.x / distance);
+        float scrollbarValue = Normalize(_data.CameraMinX, _data.CameraMaxX, _data.Camera.transform.position.x);
+        _data.CameraScrollbar.MoveScrollbar(scrollbarValue);
     }
 
     public void OnPointerDown(PointerEventData eventData)

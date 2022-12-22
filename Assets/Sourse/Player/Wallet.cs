@@ -11,6 +11,7 @@ public class Wallet : MonoBehaviour
     private int _currentMoney;
 
     public event Action<int> ChangeMoneysCount;
+    public int MoneyCount => _moneyIncome;
 
     private void Start()
     {

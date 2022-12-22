@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4277187890350340115}
   - component: {fileID: 4277187890350340119}
   - component: {fileID: 4277187890350340118}
+  - component: {fileID: 7909516862280343318}
   m_Layer: 5
   m_Name: BuyUnit
   m_TagString: Untagged
@@ -174,9 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cost: 100
-  _costText: {fileID: 4277187891833339133}
   _playerMoney: {fileID: 0}
-  _blockClickPanel: {fileID: 4277187892135380367}
+  _view: {fileID: 7909516862280343318}
 --- !u!114 &4277187890350340118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +190,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickCooldown: 3
+--- !u!114 &7909516862280343318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277187890350340125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a623e96a1b3fe194ca88a04be51e6731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blockClickPanel: {fileID: 4277187892135380367}
+  _costText: {fileID: 4277187891833339133}
 --- !u!1 &4277187890499708902
 GameObject:
   m_ObjectHideFlags: 0

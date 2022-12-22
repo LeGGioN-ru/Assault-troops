@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SoldersSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private ObjectPool[] _pools;
     [SerializeField] private float yCubeSize = 8;
 
@@ -19,6 +18,7 @@ public class SoldersSpawner : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
