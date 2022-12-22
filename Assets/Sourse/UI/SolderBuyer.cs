@@ -38,9 +38,9 @@ public class SolderBuyer : MonoBehaviour
             _blockClickPanel.gameObject.SetActive(true);
     }
 
-    public void BuySolder()
+    public void BuySolder(int solderIndex)
     {
         _playerMoney.DecreaseMoney(_cost);
-        SoldersSpawner.Instance.SpawnSolders();
+        SoldersSpawner.Instance.SpawnSolders(solderIndex);
     }
 }

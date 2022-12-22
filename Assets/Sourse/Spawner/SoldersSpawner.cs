@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class SoldersSpawner : ObjectPool
+public class SoldersSpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private GameObject _solderPrefab;
+    [SerializeField] private ObjectPool[] _pools;
+    [SerializeField] private float yCubeSize = 8;
 
     private int _soldersCount = 3;
 
@@ -18,27 +19,28 @@ public class SoldersSpawner : ObjectPool
 
         DontDestroyOnLoad(gameObject);
     }
-
-    private void Start()
+    private void OnDrawGizmos()
     {
-        Initialize(_solderPrefab);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, new Vector2(1, yCubeSize));
     }
 
-    private void SetEnemy(GameObject enemy, Vector3 spawnPoint)
+    private void SetEnemy(GameObject enemy, Vector2 spawnPoint)
     {
         enemy.transform.position = spawnPoint;
         enemy.SetActive(true);
     }
 
-    public void SpawnSolders()
+    public void SpawnSolders(int solderIndex)
     {
         for (int i = 0; i < _soldersCount; i++)
         {
-            int randomPoint = Random.Range(0, _spawnPoints.Length);
+            float randomY = Random.Range(transform.position.y - yCubeSize / 2, transform.position.y + yCubeSize / 2);
 
-            if(TryGetObject(out GameObject enemy))
+            if(_pools[solderIndex].TryGetObject(out GameObject enemy))
             {
-                SetEnemy(enemy, _spawnPoints[randomPoint].position);
+                Vector2 spawnPoint = new Vector2(transform.position.x, randomY);
+                SetEnemy(enemy, spawnPoint);
             }
         }
     }

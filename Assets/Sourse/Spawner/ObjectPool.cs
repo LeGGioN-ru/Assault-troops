@@ -5,22 +5,23 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject _container;
+    [SerializeField] private GameObject _solderPrefab;
     [SerializeField] private int _capacity;
 
     private List<GameObject> _pool = new List<GameObject>();
 
-    protected void Initialize(GameObject prefab)
+    private void Start()
     {
         for (int i = 0; i < _capacity; i++)
         {
-            GameObject spawned = Instantiate(prefab, _container.transform);
+            GameObject spawned = Instantiate(_solderPrefab, _container.transform);
             spawned.SetActive(false);
 
             _pool.Add(spawned);
         }
     }
 
-    protected bool TryGetObject(out GameObject result)
+    public bool TryGetObject(out GameObject result)
     {
         result = _pool.FirstOrDefault(p => p.activeInHierarchy == false);
 
