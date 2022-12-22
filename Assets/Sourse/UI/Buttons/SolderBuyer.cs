@@ -8,6 +8,8 @@ public class SolderBuyer : MonoBehaviour
     [SerializeField] private Wallet _playerMoney;
     [SerializeField] private SolderBuyerView _view;
 
+    public int Cost => _cost;
+
     private void OnEnable()
     {
         _playerMoney.ChangeMoneysCount += (int money) =>
