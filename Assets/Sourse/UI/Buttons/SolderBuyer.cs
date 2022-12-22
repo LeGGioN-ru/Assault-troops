@@ -28,15 +28,15 @@ public class SolderBuyer : MonoBehaviour
 
     private void Start()
     {
-        _view.SetCost(_cost.ToString());
+        //_view.SetCost(_cost.ToString());
     }
 
     private void CheckCanBuySolder(int playerMoney)
     {
-        if (playerMoney >= _cost)
-            _view.ActiveteBlockCLickPanel(false);
-        else
-            _view.ActiveteBlockCLickPanel(true);
+        //if (playerMoney >= _cost)
+        //    _view.ActiveteBlockCLickPanel(false);
+        //else
+        //    _view.ActiveteBlockCLickPanel(true);
     }
 
     public void BuySolder(int solderIndex)

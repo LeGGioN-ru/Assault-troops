@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Wallet))]
@@ -10,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Point in strict order from the side of the enemy")]
     [SerializeField] private List<Trench> _trenches;
     [SerializeField] private float _spawnDelay;
+    [SerializeField] private float _finalAttackImpact;
 
     private Wallet _wallet;
     private float _passedTime;
@@ -38,6 +40,15 @@ public class EnemyAI : MonoBehaviour
     {
         TryMove();
         TryAttack();
+        TryFinalAttack();
+    }
+
+    private void TryFinalAttack()
+    {
+        Trench lastTrench = _trenches.Last();
+
+        if (lastTrench.IsTrenchBusy(false) && lastTrench.Impact >= _finalAttackImpact)
+            lastTrench.GetUpAllSoliders();
     }
 
     private void TryAttack()
@@ -70,7 +81,6 @@ public class EnemyAI : MonoBehaviour
 
     private void TryBuySolider()
     {
-
         int firstSoliderIndex = 0;
         if (_wallet.MoneyCount > _solderBuyer.Cost && _passedTimeSpawn >= _spawnDelay)
         {
