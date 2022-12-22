@@ -27,4 +27,19 @@ public class ObjectPool : MonoBehaviour
 
         return result != null;
     }
+
+    public float GetMaxSoldersX()
+    {
+        float maxX = Mathf.NegativeInfinity;
+
+        for (int i = 0; i < _pool.Count; i++)
+        {
+            if (_pool[i].activeInHierarchy)
+                if (_pool[i].transform.position.x > maxX)
+                    maxX = _pool[i].transform.position.x;
+
+        }
+
+        return maxX;
+    }
 }

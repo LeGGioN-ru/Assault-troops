@@ -7,6 +7,7 @@ public class CameraScrollbarView : MonoBehaviour
 
     public void MoveScrollbar(float value)
     {
+        Debug.Log(value);
         _bar.value = value;
     }
 }

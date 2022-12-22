@@ -44,4 +44,19 @@ public class SoldersSpawner : MonoBehaviour
             }
         }
     }
+
+    public float GetMaxX()
+    {
+        float maxX = Mathf.NegativeInfinity;
+
+        for (int i = 0; i < _pools.Length; i++)
+        {
+            float x = _pools[i].GetMaxSoldersX();
+
+            if (x > maxX)
+                maxX = x;
+        }
+
+        return maxX;
+    }
 }
