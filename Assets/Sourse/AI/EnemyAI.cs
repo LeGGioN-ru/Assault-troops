@@ -81,10 +81,9 @@ public class EnemyAI : MonoBehaviour
 
     private void TryBuySolider()
     {
-        int firstSoliderIndex = 0;
         if (_wallet.MoneyCount > _solderBuyer.Cost && _passedTimeSpawn >= _spawnDelay)
         {
-            _solderBuyer.BuySolder(firstSoliderIndex);
+            _solderBuyer.BuySolder();
             _passedTimeSpawn = 0;
         }
     }

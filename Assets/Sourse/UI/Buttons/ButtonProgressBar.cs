@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ButtonProgressBar : MonoBehaviour
 {
     [SerializeField] private Image[] _progressBar;
-    [SerializeField] private BuyButtonCooldown _buttonClickCooldown;
+    [SerializeField] private SolderBuyer _solderByuer;
 
     private float _currentTime = 0;
     private float _maxTime;
@@ -13,7 +13,7 @@ public class ButtonProgressBar : MonoBehaviour
 
     private void Start()
     {
-        _maxTime = _buttonClickCooldown.ClickCooldown / _progressBar.Length;
+        _maxTime = _solderByuer.ClickCooldown / _progressBar.Length;
     }
 
     private void SetBarRed()

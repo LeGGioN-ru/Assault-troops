@@ -1,18 +1,27 @@
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class SolderBuyer : MonoBehaviour
 {
+    [SerializeField] private SoldersSpawner _spawner;
+    [SerializeField] private Wallet _wallet;
+    [SerializeField] private ObjectPool _pool;
     [SerializeField] private int _cost;
-    [SerializeField] private Wallet _playerMoney;
-    [SerializeField] private SolderBuyerView _view;
+    [SerializeField] private float _clickCooldown = 4;
+
+    private float _currentTime = 0;
+    private bool _isCanBuy = false;
 
     public int Cost => _cost;
+    public float ClickCooldown => _clickCooldown;
+
+    public event Action ButtonReady;
+    public event Action<bool> ChangeIsCanBuy;
 
     private void OnEnable()
     {
-        _playerMoney.ChangeMoneysCount += (int money) =>
+        _wallet.ChangeMoneysCount += (int money) =>
         {
             CheckCanBuySolder(money);
         };
@@ -20,28 +29,45 @@ public class SolderBuyer : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerMoney.ChangeMoneysCount -= (int money) =>
+        _wallet.ChangeMoneysCount -= (int money) =>
         {
             CheckCanBuySolder(money);
         };
     }
 
-    private void Start()
-    {
-        _view.SetCost(_cost.ToString());
-    }
-
     private void CheckCanBuySolder(int playerMoney)
     {
         if (playerMoney >= _cost)
-            _view.ActiveteBlockCLickPanel(false);
+        {
+            _isCanBuy = true;
+            ChangeIsCanBuy?.Invoke(_isCanBuy);
+        }
         else
-            _view.ActiveteBlockCLickPanel(true);
+        {
+            _isCanBuy = false;
+            ChangeIsCanBuy?.Invoke(_isCanBuy);
+        }
     }
 
-    public void BuySolder(int solderIndex)
+    private IEnumerator Cooldown()
     {
-        _playerMoney.DecreaseMoney(_cost);
-        SoldersSpawner.Instance.SpawnSolders(solderIndex);
+        _currentTime = 0;
+
+        while (_currentTime < _clickCooldown)
+        {
+            _currentTime += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        ButtonReady?.Invoke();
+    }
+
+    public void BuySolder()
+    {
+        StartCoroutine(Cooldown());
+        _wallet.DecreaseMoney(_cost);
+
+        _spawner.SpawnSolders(_pool);
     }
 }
