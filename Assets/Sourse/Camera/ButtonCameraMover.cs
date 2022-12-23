@@ -1,23 +1,24 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonCameraMover : CanNormilizeValue, IPointerDownHandler, IPointerUpHandler
+public class ButtonCameraMover : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private CameraMover _mover;
     [SerializeField] private CameraData _data;
     [SerializeField] private bool _isRightButton = true;
 
-    private bool _pressed = false;
+    private bool _buttonPressed = false;
 
     private void Update()
     {
-        if(_pressed)
+        if(_buttonPressed)
         {
             _mover.enabled = false;
-            if(_isRightButton)
-                MoveRight();
+
+            if (_isRightButton)
+                ChangeCameraPosition(_data.CameraMaxX);
             else
-                MoveLeft();
+                ChangeCameraPosition(_data.CameraMinX);
         }
         else
         {
@@ -25,33 +26,19 @@ public class ButtonCameraMover : CanNormilizeValue, IPointerDownHandler, IPointe
         }
     }
 
-    private void MoveRight()
+    private void ChangeCameraPosition(float cameraBorderPosition)
     {
-        Vector3 newPosition = new Vector3(_data.CameraMaxX, _data.Camera.transform.position.y, _data.Camera.transform.position.z);
-        ChangeCameraPosition(newPosition);
-    }
-
-    private void MoveLeft()
-    {
-        Vector3 newPosition = new Vector3(_data.CameraMinX, _data.Camera.transform.position.y, _data.Camera.transform.position.z);
-        ChangeCameraPosition(newPosition);
-    }
-
-    private void ChangeCameraPosition(Vector3 newPosition)
-    {
+        Vector3 newPosition = new Vector3(cameraBorderPosition, _data.Camera.transform.position.y, _data.Camera.transform.position.z);
         _data.Camera.transform.position = Vector3.MoveTowards(_data.Camera.transform.position, newPosition, 5f * Time.deltaTime);
-
-        float scrollbarValue = Normalize(_data.CameraMinX, _data.CameraMaxX, _data.Camera.transform.position.x);
-        _data.CameraScrollbar.MoveScrollbar(scrollbarValue);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _pressed = true;
+        _buttonPressed = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _pressed = false;
+        _buttonPressed = false;
     }
 }

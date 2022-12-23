@@ -12,6 +12,9 @@ public class CameraData : MonoBehaviour
     private float _backgroundMinX, _backgroundMaxX;
     private float _cameraWidth;
 
+
+    public float BackgorundMinX => _backgroundMinX;
+    public float BackgorundMaxX => _backgroundMaxX;
     public float CameraMinX => _cameraMinX;
     public float CameraMaxX => _cameraMaxX;
     public Camera Camera => _camera;

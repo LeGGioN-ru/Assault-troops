@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMover : CanNormilizeValue
+public class CameraMover : MonoBehaviour
 {
     [SerializeField] private CameraData _data;
 
@@ -28,9 +28,6 @@ public class CameraMover : CanNormilizeValue
     private float ClapmCamera(float targetPositionX)
     {
         float newX = Mathf.Clamp(targetPositionX, _data.CameraMinX, _data.CameraMaxX);
-
-        float scrollbarValue = Normalize(_data.CameraMinX, _data.CameraMaxX, newX);
-        _data.CameraScrollbar.MoveScrollbar(scrollbarValue);
 
         return newX;
     }

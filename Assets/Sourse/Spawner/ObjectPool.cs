@@ -42,4 +42,19 @@ public class ObjectPool : MonoBehaviour
 
         return maxX;
     }
+
+    public float GetMinSoldersX()
+    {
+        float minX = Mathf.Infinity;
+
+        for (int i = 0; i < _pool.Count; i++)
+        {
+            if (_pool[i].activeInHierarchy)
+                if (_pool[i].transform.position.x < minX)
+                    minX = _pool[i].transform.position.x;
+
+        }
+
+        return minX;
+    }
 }
