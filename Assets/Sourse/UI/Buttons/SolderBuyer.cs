@@ -63,6 +63,12 @@ public class SolderBuyer : MonoBehaviour
         ButtonReady?.Invoke();
     }
 
+    public void SetPool(ObjectPoolInfo info)
+    {
+        _pool = info.Pool;
+        _cost = info.SoldierCost;
+    }
+
     public void BuySolder()
     {
         StartCoroutine(Cooldown());
