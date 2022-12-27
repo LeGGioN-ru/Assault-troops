@@ -7,6 +7,7 @@ public class RandomBuildingsSetter : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _spawnRateTrench;
     [SerializeField] private float _spawnRateBarbedWire;
+    [SerializeField] private float _spawnRatePuddels;
     [SerializeField] private float _spawnRateNone;
 
     private List<float> _spawnRate = new List<float>();
@@ -15,6 +16,7 @@ public class RandomBuildingsSetter : MonoBehaviour
     {
         _spawnRate.Add(_spawnRateTrench);
         _spawnRate.Add(_spawnRateBarbedWire);
+        _spawnRate.Add(_spawnRatePuddels);
         _spawnRate.Add(_spawnRateNone);
 
         for (int i = 0; i < _spawnPoints.Length; i++)

@@ -974,7 +974,7 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 6146239705889566256, guid: 842ed6872d9ed574287f1a9677a225b3, type: 3}
   - {fileID: 7082522090073623619, guid: 30b8c827176f923429617c3ed8c438c7, type: 3}
-  - {fileID: 0}
+  - {fileID: 8045194392608508729, guid: a8f97aa259ba55448883518b445d356b, type: 3}
   - {fileID: 0}
   _spawnPoints:
   - {fileID: 1393273032}
@@ -983,6 +983,7 @@ MonoBehaviour:
   - {fileID: 1725924660}
   _spawnRateTrench: 50
   _spawnRateBarbedWire: 20
+  _spawnRatePuddels: 20
   _spawnRateNone: 20
 --- !u!1 &128917233
 GameObject:
