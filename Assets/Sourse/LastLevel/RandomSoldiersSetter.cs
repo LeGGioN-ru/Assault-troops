@@ -4,17 +4,15 @@ using UnityEngine;
 public class RandomSoldiersSetter : MonoBehaviour
 {
     [SerializeField] private List<ObjectPoolInfo> _playerPools;
-    [SerializeField] private SolderBuyer[] _solderBuyer;
-    [SerializeField] private ButtonImageSetter[] _imageSetters;
+    [SerializeField] private SoldierInfoSetter[] _imageSetters;
 
     private void Start()
     {
-        for (int i = 0; i < _solderBuyer.Length; i++)
+        for (int i = 0; i < _imageSetters.Length; i++)
         {
             int index = Random.Range(0, _playerPools.Capacity);
 
-            _solderBuyer[i].SetPool(_playerPools[index]);
-            _imageSetters[i].SetImage(_playerPools[index].SoldierImage);
+            _imageSetters[i].SetInfo(_playerPools[index]);
         }
     }
 }

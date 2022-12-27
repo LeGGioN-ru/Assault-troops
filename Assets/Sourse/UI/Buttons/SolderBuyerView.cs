@@ -24,6 +24,11 @@ public class SolderBuyerView : MonoBehaviour
         {
             ActiveteBlockCLickPanel(canBuy);
         };
+
+        _solderBuyer.CostChanged += (cost) =>
+        {
+            SetCost(cost);
+        };
     }
 
     private void OnDisable()
@@ -37,11 +42,16 @@ public class SolderBuyerView : MonoBehaviour
         {
             ActiveteBlockCLickPanel(canBuy);
         };
+
+        _solderBuyer.CostChanged -= (cost) =>
+        {
+            SetCost(cost);
+        };
     }
 
-    private void Start()
+    private void SetCost(int cost)
     {
-        _costText.text = _solderBuyer.Cost.ToString();
+        _costText.text = cost.ToString();
     }
 
     private void ActiveteBlockCLickPanel(bool canBuy)

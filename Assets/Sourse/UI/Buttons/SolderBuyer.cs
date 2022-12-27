@@ -18,6 +18,7 @@ public class SolderBuyer : MonoBehaviour
 
     public event Action ButtonReady;
     public event Action<bool> ChangeIsCanBuy;
+    public event Action<int> CostChanged;
 
     private void OnEnable()
     {
@@ -67,6 +68,8 @@ public class SolderBuyer : MonoBehaviour
     {
         _pool = info.Pool;
         _cost = info.SoldierCost;
+
+        CostChanged?.Invoke(_cost);
     }
 
     public void BuySolder()
