@@ -7,21 +7,13 @@ public class BarbedWire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Solider solider = collision.GetComponent<Solider>();
-
-        if (solider == null)
-            return;
-
-        //solider.DecreaseMoveSpeed(_moveSpeedDecrease):
+        if(collision.TryGetComponent<MoveState>(out MoveState soldier))
+            soldier.DecreaseSpeed(_moveSpeedDecrease);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Solider solider = collision.GetComponent<Solider>();
-
-        if (solider == null)
-            return;
-
-        //solider.IncreaseMoveSpeed(_moveSpeedDecrease);
+        if (collision.TryGetComponent<MoveState>(out MoveState soldier))
+            soldier.IncreaseSpeed(_moveSpeedDecrease);
     }
 }

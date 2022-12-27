@@ -635,7 +635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 39.22, y: 0}
+  m_AnchoredPosition: {x: 39.22003, y: 0}
   m_SizeDelta: {x: 98.46, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68237716
@@ -1020,6 +1020,7 @@ MonoBehaviour:
   - {fileID: 7082522090073623619, guid: 30b8c827176f923429617c3ed8c438c7, type: 3}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   _spawnPoints:
   - {fileID: 1393273032}
   - {fileID: 1981666448}
@@ -1334,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &170702201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1528,10 +1529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sevgili Asya\u2026 Mektubuma ba\u015Flarken sana olan \xF6zlemimi belirtmek
-    isterim. Aradan ge\xE7en onca aya ra\u011Fmen. Sanki hi\xE7 ayr\u0131lmam\u0131\u015F\u0131z,
-    beraberiz gibi. Senin de b\xF6yle d\xFC\u015F\xFCnd\xFC\u011F\xFCne eminim. Beraber
-    ge\xE7en onca seneden sonra hat\u0131ralar asla unutulamazlar. "
+  m_text: Game on pause(
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f5f5ee07064d5e438b5afb648ea187b, type: 2}
   m_sharedMaterial: {fileID: 7317312527120005857, guid: 6f5f5ee07064d5e438b5afb648ea187b, type: 2}
@@ -1558,7 +1556,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.1
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2140,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990460576419900596, guid: 31c970aecd1aa3d49b4b2775c3057de0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.999908
+      value: -16.000488
       objectReference: {fileID: 0}
     - target: {fileID: 4990460576419900596, guid: 31c970aecd1aa3d49b4b2775c3057de0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2596,7 +2594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 39.22, y: 0}
+  m_AnchoredPosition: {x: 39.22003, y: 0}
   m_SizeDelta: {x: 98.46, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603287287
@@ -2746,7 +2744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277011691809210487, guid: c5376fb6a94102147aac1d902931b03d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.999908
+      value: -16.000488
       objectReference: {fileID: 0}
     - target: {fileID: 5277011691809210487, guid: c5376fb6a94102147aac1d902931b03d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5066,7 +5064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4197972598039892805, guid: 5676209a9fdd1bf478cdc7fa5b3c2730, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.9999695
+      value: -14.000366
       objectReference: {fileID: 0}
     - target: {fileID: 4197972598039892805, guid: 5676209a9fdd1bf478cdc7fa5b3c2730, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5832,8 +5830,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: 0.00000016278165
-  m_Size: 0.3904073
+  m_Value: 0.00000012208623
+  m_Size: 0.39043683
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6276,7 +6274,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a34a3b1adb2e5164fbd3c1b4ed90affc, type: 3}
   m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_FlipX: 0
@@ -6980,7 +6978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4277187892051765279, guid: 0c7c9a3257426e54aa7b26d0c55f4038, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.4631958
+      value: -0.4625244
       objectReference: {fileID: 0}
     - target: {fileID: 4277187892051765279, guid: 0c7c9a3257426e54aa7b26d0c55f4038, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
