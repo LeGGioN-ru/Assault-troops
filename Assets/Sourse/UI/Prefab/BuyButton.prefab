@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blockClickPanel: {fileID: 4277187892135380367}
   _costText: {fileID: 4277187891833339133}
-  _button: {fileID: 0}
+  _button: {fileID: 4277187890350340115}
 --- !u!114 &8625194314087841083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 4277187892107904601}
+  _solderBuyer: {fileID: 4277187890350340119}
 --- !u!1 &4277187890499708902
 GameObject:
   m_ObjectHideFlags: 0
