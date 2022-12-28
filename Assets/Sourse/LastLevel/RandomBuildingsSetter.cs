@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RandomBuildingsSetter : MonoBehaviour
 {
+    [SerializeField] private TrenchList _trenchList;
     [SerializeField] private List<GameObject> _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _spawnRateTrench;
@@ -25,13 +26,15 @@ public class RandomBuildingsSetter : MonoBehaviour
 
             SpawnBuilding(_prefabs[index], _spawnPoints[i]);
         }
+
+        _trenchList.SetAllTrenches();
     }
 
 
     private void SpawnBuilding(GameObject prefab, Transform spawnPoint)
     {
         if(prefab != null)
-            Instantiate(prefab, spawnPoint);
+            Instantiate(prefab, spawnPoint.position, Quaternion.identity, _trenchList.gameObject.transform);
     }
 
     private int ChooseRandomBuilding()
