@@ -33,7 +33,7 @@ public class RandomBuildingsSetter : MonoBehaviour
 
     private void SpawnBuilding(GameObject prefab, Transform spawnPoint)
     {
-        if(prefab != null)
+        if (prefab != null)
             Instantiate(prefab, spawnPoint.position, Quaternion.identity, _trenchList.gameObject.transform);
     }
 

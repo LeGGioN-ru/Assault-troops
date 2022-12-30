@@ -80,6 +80,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
+      propertyPath: _distance.x
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710881663751996340, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: _indentPivot.x
       value: -2.5
       objectReference: {fileID: 0}

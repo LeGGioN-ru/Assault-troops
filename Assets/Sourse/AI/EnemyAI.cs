@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,21 +7,25 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private SolderBuyer _solderBuyer;
-    [SerializeField] private float _tickDelay;
-    [SerializeField] private float _coefficientFear;
-    [Header("Point in strict order from the side of the enemy")]
-    [SerializeField] private List<Trench> _trenches;
-    [SerializeField] private float _spawnDelay;
-    [SerializeField] private float _finalAttackImpact;
+    [SerializeField] private List<EnemyAITemplate> _templates;
+    [SerializeField] private LoseGame _loseZone;
 
+    private EnemyAITemplate _currentTemplate;
+    private List<Trench> _trenches;
     private Wallet _wallet;
     private float _passedTime;
     private float _passedTimeSpawn;
+    private float _passedTimeMove;
+    private Coroutine _moveCoroutine;
 
-    private void Start()
+    public void Init(List<Trench> trenches)
     {
         _wallet = GetComponent<Wallet>();
         TryBuySolider();
+        _currentTemplate = _templates[Random.Range(0, _templates.Count)];
+
+        _trenches = trenches;
+        enabled = true;
     }
 
     private void Update()
@@ -28,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         _passedTime += Time.deltaTime;
         _passedTimeSpawn += Time.deltaTime;
 
-        if (_passedTime < _tickDelay)
+        if (_passedTime < _currentTemplate.TickDelay)
             return;
 
         _passedTime = 0;
@@ -41,14 +46,21 @@ public class EnemyAI : MonoBehaviour
         TryMove();
         TryAttack();
         TryFinalAttack();
+        TryWinGame();
     }
 
     private void TryFinalAttack()
     {
         Trench lastTrench = _trenches.Last();
 
-        if (lastTrench.IsTrenchBusy(false) && lastTrench.Impact >= _finalAttackImpact)
+        if (lastTrench.IsTrenchBusy(false) && lastTrench.Impact >= _currentTemplate.FinalAttackImpact)
             lastTrench.GetUpAllSoliders();
+    }
+
+    private void TryWinGame()
+    {
+        if (_trenches[_trenches.Count - 1].IsTrenchBusy(false))
+            _trenches[_trenches.Count - 1].GetUpAllSoliders();
     }
 
     private void TryAttack()
@@ -62,7 +74,7 @@ public class EnemyAI : MonoBehaviour
                     float enemyTrenchImpact = _trenches[i].Impact;
                     float playerTrenchImpact = _trenches[i + 1].Impact;
 
-                    if (enemyTrenchImpact / playerTrenchImpact >= _coefficientFear)
+                    if (enemyTrenchImpact / playerTrenchImpact >= _currentTemplate.CoefficientFear)
                         _trenches[i].GetUpAllSoliders();
                 }
             }
@@ -75,42 +87,26 @@ public class EnemyAI : MonoBehaviour
         {
             if (i + 1 < _trenches.Count)
                 if (_trenches[i + 1].IsTrenchBusy(true) == false && _trenches[i].IsTrenchBusy(false))
-                    _trenches[i].GetUpAllSoliders();
+                    StartCoroutine(TryFinalMove(_trenches[i], _trenches[i + 1]));
         }
+    }
+
+    private IEnumerator TryFinalMove(Trench currentTrench, Trench nextTrench)
+    {
+        yield return new WaitForSeconds(_currentTemplate.MoveDelay);
+
+        if (currentTrench.IsTrenchBusy(false) && nextTrench.IsTrenchBusy(true) == false)
+            currentTrench.GetUpAllSoliders();
+
+        _passedTimeMove = 0;
     }
 
     private void TryBuySolider()
     {
-        if (_wallet.MoneyCount > _solderBuyer.Cost && _passedTimeSpawn >= _spawnDelay)
+        if (_wallet.MoneyCount > _solderBuyer.Cost && _passedTimeSpawn >= _currentTemplate.SpawnDelay)
         {
             _solderBuyer.BuySolder();
             _passedTimeSpawn = 0;
         }
     }
-
-    //private Risk _currentRisk;
-    //private Risk IdentifyRisks()
-    //{
-    //    int countBusyTrenches = 0;
-
-    //    foreach (Trench trench in _trenches)
-    //        if (trench.IsTrenchBusy(true))
-    //            countBusyTrenches++;
-
-    //    float percentBusy = countBusyTrenches / _trenches.Count * 100;
-
-    //    if (percentBusy <= 25)
-    //        return Risk.Easy;
-    //    else if (percentBusy <= 50)
-    //        return Risk.Normal;
-    //    else
-    //        return Risk.Hard;
-    //}
-
-    //private enum Risk
-    //{
-    //    Easy = 25,
-    //    Normal = 50,
-    //    Hard = 75
-    //}
 }
