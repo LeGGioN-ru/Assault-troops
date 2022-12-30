@@ -1671,6 +1671,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
+      propertyPath: _loseZone
+      value: 
+      objectReference: {fileID: 867276844}
+    - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -1726,6 +1730,14 @@ PrefabInstance:
       propertyPath: _templates.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 1b5bfd6725420e549967ba0bc0ff11ef, type: 2}
+    - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
+      propertyPath: _soldierBuyers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
+      propertyPath: _soldierBuyers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1198978452}
     - target: {fileID: 6865424936303220915, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _cost
       value: 100

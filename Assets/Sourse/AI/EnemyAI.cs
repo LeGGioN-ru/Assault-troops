@@ -6,17 +6,15 @@ using UnityEngine;
 [RequireComponent(typeof(Wallet))]
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private SolderBuyer _solderBuyer;
     [SerializeField] private List<EnemyAITemplate> _templates;
     [SerializeField] private LoseGame _loseZone;
+    [SerializeField] private List<SolderBuyer> _soldierBuyers;
 
     private EnemyAITemplate _currentTemplate;
     private List<Trench> _trenches;
     private Wallet _wallet;
     private float _passedTime;
     private float _passedTimeSpawn;
-    private float _passedTimeMove;
-    private Coroutine _moveCoroutine;
 
     public void Init(List<Trench> trenches)
     {
@@ -26,6 +24,11 @@ public class EnemyAI : MonoBehaviour
 
         _trenches = trenches;
         enabled = true;
+    }
+
+    public void AddSoliderBuyer(SolderBuyer solderBuyer)
+    {
+        _soldierBuyers.Add(solderBuyer);
     }
 
     private void Update()
@@ -97,16 +100,17 @@ public class EnemyAI : MonoBehaviour
 
         if (currentTrench.IsTrenchBusy(false) && nextTrench.IsTrenchBusy(true) == false)
             currentTrench.GetUpAllSoliders();
-
-        _passedTimeMove = 0;
     }
 
     private void TryBuySolider()
     {
-        if (_wallet.MoneyCount > _solderBuyer.Cost && _passedTimeSpawn >= _currentTemplate.SpawnDelay)
+        for (int i = 0; i < _soldierBuyers.Count; i++)
         {
-            _solderBuyer.BuySolder();
-            _passedTimeSpawn = 0;
+            //if (_wallet.MoneyCount > _soldierBuyers[i].Cost && _passedTimeSpawn >= _currentTemplate.SpawnDelay)
+            //{
+            //    _soldierBuyers[i].BuySolder();
+            //    _passedTimeSpawn = 0;
+            //}
         }
     }
 }
