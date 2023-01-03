@@ -237,8 +237,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: money
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6f5f5ee07064d5e438b5afb648ea187b, type: 2}
-  m_sharedMaterial: {fileID: 7317312527120005857, guid: 6f5f5ee07064d5e438b5afb648ea187b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc01b7981a4ab3e4a981f463350c55d8, type: 2}
+  m_sharedMaterial: {fileID: 8408939879452530856, guid: dc01b7981a4ab3e4a981f463350c55d8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 23.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
