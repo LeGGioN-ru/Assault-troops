@@ -1,24 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemySoliderFinder))]
 [RequireComponent(typeof(Animator))]
-public class AttackState : State
+public abstract class AttackState : State
 {
-    [SerializeField] private float _damage;
     [SerializeField] private float _attackSpeed;
 
-    private EnemySoliderFinder _enemySoliderFinder;
     private float _passedTime;
-
-    private void Start()
-    {
-        _enemySoliderFinder = GetComponent<EnemySoliderFinder>();
-    }
-
-    private void OnEnable()
-    {
-        PlayAnimation(SoliderAnimationController.States.Attack);
-    }
 
     private void Update()
     {
@@ -26,8 +13,11 @@ public class AttackState : State
 
         if (_passedTime >= _attackSpeed)
         {
-            _enemySoliderFinder.EnemySolider.ApplyDamage(_damage);
+            Attack();
+            PlayAnimation(SoliderAnimationController.States.Attack);
             _passedTime = 0;
         }
     }
+
+    abstract protected void Attack();
 }
