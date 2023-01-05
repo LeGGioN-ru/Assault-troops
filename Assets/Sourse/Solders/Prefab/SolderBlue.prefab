@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 1822686833}
   - component: {fileID: 1822686832}
   m_Layer: 0
-  m_Name: Solder
+  m_Name: SolderBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

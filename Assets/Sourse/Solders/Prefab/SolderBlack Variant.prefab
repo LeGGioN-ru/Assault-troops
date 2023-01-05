@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1822686831, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2b1fe7e2c174b2b49930b2b5e1fb2621, type: 2}
+      objectReference: {fileID: 22100000, guid: 8ebf059f0422bb240a5ca8ce94c6b652, type: 2}
     - target: {fileID: 7710881663751996328, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.41

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4208418963294068425, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: m_Name
-      value: SolderBlack Variant
+      value: SolderGreen
       objectReference: {fileID: 0}
     - target: {fileID: 4208418963294068432, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: m_RootOrder
@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.65
       objectReference: {fileID: 0}
+    - target: {fileID: 5865306001133544212, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: a146721db0d50c9419c8368104eff717, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
