@@ -126,8 +126,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonClickCooldown, Assembly-CSharp
+      - m_Target: {fileID: 7909516862280343318}
+        m_TargetAssemblyTypeName: SolderBuyerView, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:

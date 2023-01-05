@@ -9,6 +9,8 @@ public class SolderBuyer : MonoBehaviour
     [SerializeField] private ObjectPool _pool;
     [SerializeField] private int _cost;
     [SerializeField] private float _clickCooldown = 4;
+    [SerializeField] private bool _isArtilley = false;
+    [SerializeField] private Artillery _artillery;
 
     private float _currentTime = 0;
     private bool _isCanBuy = false;
@@ -22,6 +24,8 @@ public class SolderBuyer : MonoBehaviour
 
     private void OnEnable()
     {
+        CostChanged?.Invoke(_cost);
+
         _wallet.ChangeMoneysCount += (int money) =>
         {
             CheckCanBuySolder(money);
@@ -64,6 +68,11 @@ public class SolderBuyer : MonoBehaviour
         ButtonReady?.Invoke();
     }
 
+    private void SpawnArtilleryScope()
+    {
+        _artillery.gameObject.SetActive(true);
+    }
+
     public void SetPool(ObjectPoolInfo info)
     {
         _pool = info.Pool;
@@ -77,6 +86,9 @@ public class SolderBuyer : MonoBehaviour
         StartCoroutine(Cooldown());
         _wallet.DecreaseMoney(_cost);
 
-        _spawner.SpawnSolders(_pool);
+        if (_isArtilley)
+            SpawnArtilleryScope();
+        else
+            _spawner.SpawnSolders(_pool);
     }
 }

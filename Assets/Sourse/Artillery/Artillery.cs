@@ -1,15 +1,23 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Artillery : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private Vector2 _explosionRadius;
+    [SerializeField] private float _damage;
 
     private RectTransform _transform;
 
     private void Start()
     {
         _transform = GetComponent<RectTransform>();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(Camera.main.ScreenToWorldPoint(transform.position), _explosionRadius);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -24,11 +32,16 @@ public class Artillery : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
-    }
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), _explosionRadius, 0);
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
+        foreach (var collider in colliders)
+        {
+            if (collider.TryGetComponent(out Solider solider))
+            {
+                solider.ApplyDamage(_damage);
+            }
+        }
 
+        gameObject.SetActive(false);
     }
 }
