@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7710881663751996330}
   - component: {fileID: 7710881663751996341}
   - component: {fileID: 7710881663751996340}
-  - component: {fileID: 7710881663751996343}
   - component: {fileID: 7710881663751996342}
   - component: {fileID: 7710881663751996337}
   - component: {fileID: 7710881663751996336}
@@ -128,23 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distance: {x: 4.2, y: 20.43, z: 0}
   _indentPivot: {x: 2.5, y: 0.79}
---- !u!114 &7710881663751996343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7710881663751996338}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73603b397189f4b4e878b3ef68b3187a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitions:
-  - {fileID: 7710881663751996339}
-  - {fileID: 1822686832}
-  _damage: 20
-  _attackSpeed: 1
 --- !u!114 &7710881663751996342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03a7217126f70d44a09ef3863860be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 7710881663751996343}
+  _targetState: {fileID: 0}
 --- !u!114 &7710881663751996339
 MonoBehaviour:
   m_ObjectHideFlags: 0
