@@ -3,12 +3,14 @@ using UnityEngine;
 public class CameraMover : MonoBehaviour
 {
     [SerializeField] private CameraData _data;
+    [SerializeField] private IsClickOnUIChecker _isClickOnUIChecker;
 
     private Vector3 dragOrigin;
 
     private void Update()
     {
-        Move();
+        if(_isClickOnUIChecker.IsPointerOverUIElement() == false)
+            Move();
     }
 
     private void Move()

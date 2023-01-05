@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class ButtonCameraMover : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private CameraMover _mover;
     [SerializeField] private CameraData _data;
     [SerializeField] private bool _isRightButton = true;
 
@@ -13,16 +12,10 @@ public class ButtonCameraMover : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if(_buttonPressed)
         {
-            _mover.enabled = false;
-
             if (_isRightButton)
                 ChangeCameraPosition(_data.CameraMaxX);
             else
                 ChangeCameraPosition(_data.CameraMinX);
-        }
-        else
-        {
-            _mover.enabled = true;
         }
     }
 
