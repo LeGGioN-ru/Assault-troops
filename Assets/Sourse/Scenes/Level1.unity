@@ -1122,6 +1122,8 @@ MonoBehaviour:
   - {fileID: 611161644}
   - {fileID: 1198978450}
   - {fileID: 749943879}
+  _enemyPools: []
+  _enemySetters: []
 --- !u!4 &126301873
 Transform:
   m_ObjectHideFlags: 0
@@ -2007,7 +2009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220879, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220912, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _startMoney
@@ -7036,8 +7038,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: 0.001207566
-  m_Size: 0.5662021
+  m_Value: 0.0012075657
+  m_Size: 0.5661654
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
