@@ -5,6 +5,8 @@ public class RandomSoldiersSetter : MonoBehaviour
 {
     [SerializeField] private List<ObjectPoolInfo> _playerPools;
     [SerializeField] private SoldierInfoSetter[] _setters;
+    [SerializeField] private List<ObjectPoolInfo> _enemyPools;
+    [SerializeField] private SoldierInfoSetter[] _enemySetters;
 
     private void Start()
     {
@@ -14,6 +16,9 @@ public class RandomSoldiersSetter : MonoBehaviour
 
             _setters[i].SetInfo(_playerPools[index]);
             _playerPools.RemoveAt(index);
+
+            //_enemySetters[i].SetInfo(_enemyPools[index]);
+            //_enemyPools.RemoveAt(index);
         }
     }
 }
