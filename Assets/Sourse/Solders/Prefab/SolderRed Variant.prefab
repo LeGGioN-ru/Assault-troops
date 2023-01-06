@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 8418193709441194067}
   - component: {fileID: 5383385967228785653}
   - component: {fileID: 2789658633649432122}
+  - component: {fileID: 1254224691}
+  - component: {fileID: 1254224692}
   m_Layer: 0
   m_Name: SolderRed Variant
   m_TagString: Untagged
@@ -227,6 +229,7 @@ MonoBehaviour:
   - {fileID: 8633437666598592369}
   - {fileID: 9022863189490432507}
   - {fileID: 5383385967228785653}
+  - {fileID: 1254224692}
 --- !u!114 &5119002194927505403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,5 +316,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 5383385967228785653}
-  _attackSpeed: 0
-  _damage: 0
+  - {fileID: 1254224692}
+  _attackSpeed: 2
+  _damage: 3
+--- !u!114 &1254224691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653296878308061769}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe15291cb0e91b41abc1bed9c4d194d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 8633437666598592369}
+  _grenade: {fileID: 2086576233396688626, guid: 16671eb8983321a489f02d1b0b770ef0, type: 3}
+--- !u!114 &1254224692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653296878308061769}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a25e15fdb862445a08454f16422157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 1254224691}
+  _amountGrenade: 3
+  _throwDelay: 10
