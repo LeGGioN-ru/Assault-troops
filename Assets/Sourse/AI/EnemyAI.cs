@@ -14,15 +14,17 @@ public class EnemyAI : MonoBehaviour
     private List<Trench> _trenches;
     private Wallet _wallet;
     private float _passedTime;
-    private float _passedTimeSpawn;
+
+    private void Start()
+    {
+        _currentTemplate = _templates[Random.Range(0, _templates.Count)];
+    }
 
     public void Init(List<Trench> trenches)
     {
         _wallet = GetComponent<Wallet>();
-        TryBuySolider();
-        _currentTemplate = _templates[Random.Range(0, _templates.Count)];
-
         _trenches = trenches;
+
         enabled = true;
     }
 
@@ -34,7 +36,6 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         _passedTime += Time.deltaTime;
-        _passedTimeSpawn += Time.deltaTime;
 
         if (_passedTime < _currentTemplate.TickDelay)
             return;
@@ -104,13 +105,36 @@ public class EnemyAI : MonoBehaviour
 
     private void TryBuySolider()
     {
-        for (int i = 0; i < _soldierBuyers.Count; i++)
-        {
-            //if (_wallet.MoneyCount > _soldierBuyers[i].Cost && _passedTimeSpawn >= _currentTemplate.SpawnDelay)
-            //{
-            //    _soldierBuyers[i].BuySolder();
-            //    _passedTimeSpawn = 0;
-            //}
-        }
+        LoseChance currentChance = DefineCurrentChance();
+        SolderBuyer pickedSolderBuyer = null;
+
+        if (currentChance == LoseChance.Low)
+            pickedSolderBuyer = _soldierBuyers.FirstOrDefault(solder => solder.Cost == _soldierBuyers.Max(solder => solder.Cost));
+        else if (currentChance == LoseChance.Middle)
+            pickedSolderBuyer = _soldierBuyers[Random.Range(0, _soldierBuyers.Count)];
+        else
+            pickedSolderBuyer = _soldierBuyers.FirstOrDefault(solder => solder.Cost == _soldierBuyers.Min(solder => solder.Cost));
+
+        if (pickedSolderBuyer.IsCanBuy)
+            pickedSolderBuyer.BuySolder();
+    }
+
+    private LoseChance DefineCurrentChance()
+    {
+        float currentPercentBusy = _trenches.Count(trench => trench.IsTrenchBusy(true)) / _trenches.Count;
+
+        if (currentPercentBusy <= 0.25f)
+            return LoseChance.Low;
+        else if (currentPercentBusy <= 0.65f)
+            return LoseChance.Middle;
+        else
+            return LoseChance.High;
+    }
+
+    private enum LoseChance
+    {
+        Low,
+        Middle,
+        High
     }
 }

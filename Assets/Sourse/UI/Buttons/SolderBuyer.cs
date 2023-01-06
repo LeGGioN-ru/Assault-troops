@@ -15,6 +15,7 @@ public class SolderBuyer : MonoBehaviour
     private float _currentTime = 0;
     private bool _isCanBuy = false;
 
+    public bool IsCanBuy => _isCanBuy;
     public int Cost => _cost;
     public float ClickCooldown => _clickCooldown;
 
