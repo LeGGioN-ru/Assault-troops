@@ -7,6 +7,7 @@ public class GameLoader : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         //PlayerPrefs.DeleteAll();
         LoadSave(PlayerPrefs.GetString(nameof(Save)));
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class LoseGame : MonoBehaviour
 {
     [SerializeField] private GameObject _losePanel;
+    [SerializeField] private Advertisement _advertisement;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class LoseGame : MonoBehaviour
                 Time.timeScale = 0;
 
                 _losePanel.SetActive(true);
+                _advertisement.ShowAd();
             }
     }
 }
