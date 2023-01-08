@@ -4,6 +4,7 @@ public class WinGame : MonoBehaviour
 {
     [SerializeField] private GameSaver _saver;
     [SerializeField] private int _nextSceneNumber;
+    [SerializeField] private GameObject _winPanel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,7 +12,9 @@ public class WinGame : MonoBehaviour
             if (solider.IsPlayerTeam)
             {
                 Time.timeScale = 0;
-                _saver.Save(_nextSceneNumber);
+
+                _winPanel.SetActive(true);
+                _saver.Save(_nextSceneNumber , true);
             }
     }
 }

@@ -13,7 +13,7 @@ public class RandomBuildingsSetter : MonoBehaviour
 
     private List<float> _spawnRate = new List<float>();
 
-    private void Start()
+    private void Awake()
     {
         _spawnRate.Add(_spawnRateTrench);
         _spawnRate.Add(_spawnRateBarbedWire);
@@ -26,8 +26,6 @@ public class RandomBuildingsSetter : MonoBehaviour
 
             SpawnBuilding(_prefabs[index], _spawnPoints[i]);
         }
-
-        _trenchList.SetAllTrenches();
     }
 
 
