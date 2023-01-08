@@ -7,6 +7,7 @@ public class GameLoader : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.DeleteAll();
         LoadSave(PlayerPrefs.GetString(nameof(Save)));
     }
 
@@ -14,6 +15,8 @@ public class GameLoader : MonoBehaviour
     {
         if (string.IsNullOrEmpty(jsonSave))
         {
+            ShowTraining();
+
             return;
         }
 
@@ -26,8 +29,13 @@ public class GameLoader : MonoBehaviour
     {
         if(save.IsShowTrainingFirstLevel == false)
         {
-            _trainingPanel.SetActive(true);
-            Time.timeScale = 0;
+            ShowTraining();
         }
+    }
+
+    private void ShowTraining()
+    {
+        _trainingPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

@@ -25,8 +25,6 @@ public class SolderBuyer : MonoBehaviour
 
     private void OnEnable()
     {
-        CostChanged?.Invoke(_cost);
-
         _wallet.ChangeMoneysCount += (int money) =>
         {
             CheckCanBuySolder(money);
@@ -39,6 +37,11 @@ public class SolderBuyer : MonoBehaviour
         {
             CheckCanBuySolder(money);
         };
+    }
+
+    private void Start()
+    {
+        CostChanged?.Invoke(_cost);
     }
 
     private void CheckCanBuySolder(int playerMoney)
