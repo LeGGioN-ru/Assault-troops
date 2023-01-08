@@ -15,7 +15,7 @@ public class WinGame : MonoBehaviour
                 Time.timeScale = 0;
 
                 _winPanel.SetActive(true);
-                _saver.Save(_nextSceneNumber , true);
+                _saver.Save(_nextSceneNumber , false);
                 _advertisement.ShowAd();
             }
     }
