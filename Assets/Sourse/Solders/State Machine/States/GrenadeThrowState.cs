@@ -7,7 +7,7 @@ public class GrenadeThrowState : State
 
     private bool _isPlayerTeam;
 
-    private void Start()
+    private void Awake()
     {
         _isPlayerTeam = GetComponent<Solider>().IsPlayerTeam;
     }
