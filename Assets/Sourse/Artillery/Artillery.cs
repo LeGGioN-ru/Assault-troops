@@ -22,7 +22,7 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -32,7 +32,12 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), _explosionRadius, 0);
+        Execute(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+    }
+
+    public void Execute(Vector2 point)
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(point, _explosionRadius, 0);
 
         foreach (var collider in colliders)
         {

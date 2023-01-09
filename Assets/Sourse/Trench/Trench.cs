@@ -34,6 +34,11 @@ public class Trench : MonoBehaviour
                 _solidersIn.Remove(solider);
     }
 
+    public Transform GetRandomSoldierTransform()
+    {
+        return _solidersIn[Random.Range(0, _solidersIn.Count)].transform;
+    }
+
     public bool IsTrenchBusy(bool isPlayerTeam)
     {
         if (_solidersIn.Count == 0)

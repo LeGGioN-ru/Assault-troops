@@ -39,6 +39,7 @@ public class EnemyAI : MonoBehaviour
 
         _passedTime = 0;
         TryBuySolider();
+        TryShootArtilery();
         TrenchMoveCalculate();
     }
 
@@ -48,6 +49,19 @@ public class EnemyAI : MonoBehaviour
         TryAttack();
         TryFinalAttack();
         TryWinGame();
+    }
+
+    private void TryShootArtilery()
+    {
+        foreach (var soldierBuyer in _soldierBuyers)
+        {
+            if (soldierBuyer.Artillery != null && soldierBuyer.IsCanBuy)
+            {
+                Trench trench = _trenches.Where(x => x.IsTrenchBusy(true)).OrderBy(trench => trench.Impact).FirstOrDefault();
+                Transform randomTransform = trench.GetRandomSoldierTransform();
+                soldierBuyer.Artillery.Execute(randomTransform.position);
+            }
+        }
     }
 
     private void TryFinalAttack()
