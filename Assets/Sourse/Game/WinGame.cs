@@ -6,6 +6,7 @@ public class WinGame : MonoBehaviour
     [SerializeField] private int _nextSceneNumber;
     [SerializeField] private GameObject _winPanel;
     [SerializeField] private Advertisement _advertisement;
+    [SerializeField] private bool _isTrainingShowed = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class WinGame : MonoBehaviour
                 Time.timeScale = 0;
 
                 _winPanel.SetActive(true);
-                _saver.Save(_nextSceneNumber , false);
+                _saver.Save(_nextSceneNumber , _isTrainingShowed);
                 _advertisement.ShowAd();
             }
     }
