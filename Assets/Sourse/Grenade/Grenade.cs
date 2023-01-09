@@ -7,7 +7,7 @@ public class Grenade : MonoBehaviour
     [SerializeField] private float _blowUpDelay;
     [SerializeField] private Vector2 _sizeBlowUp;
     [SerializeField] private float _damage;
-    [SerializeField] private Explosion _explosion;
+    [SerializeField] private SelfDestroyExplosion _explosion;
 
     private bool _isPlayerTeam;
     private Animator _animator;

@@ -4,7 +4,7 @@ using UnityEngine;
 public class ProjectileBomb : Projectile
 {
     [SerializeField] private Vector2 _sizeBlowUp;
-    [SerializeField] private Explosion _explosion;
+    [SerializeField] private SelfDestroyExplosion _explosion;
 
     protected override void TouchEnemy(Solider enemy, bool isPlayerTeam)
     {
