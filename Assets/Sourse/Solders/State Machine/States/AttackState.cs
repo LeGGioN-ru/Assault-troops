@@ -7,6 +7,11 @@ public abstract class AttackState : State
 
     private float _passedTime;
 
+    private void OnEnable()
+    {
+        PlayAnimation(SoliderAnimationController.States.Idle);
+    }
+
     private void Update()
     {
         _passedTime += Time.deltaTime;

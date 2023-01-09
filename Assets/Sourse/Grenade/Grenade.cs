@@ -1,17 +1,26 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Grenade : MonoBehaviour
 {
     [SerializeField] private float _blowUpDelay;
     [SerializeField] private Vector2 _sizeBlowUp;
     [SerializeField] private float _damage;
+    [SerializeField] private Explosion _explosion;
 
     private bool _isPlayerTeam;
+    private Animator _animator;
 
     public void Init(bool isPlayerTeam)
     {
         _isPlayerTeam = isPlayerTeam;
+        _animator = GetComponent<Animator>();
+
+        if (_isPlayerTeam)
+            _animator.Play(GrenadeAnimatorController.State.Fall);
+        else
+            _animator.Play(GrenadeAnimatorController.State.FallBack);
     }
 
     private void BlowUp()
@@ -33,6 +42,7 @@ public class Grenade : MonoBehaviour
             }
         }
 
+        Instantiate(_explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

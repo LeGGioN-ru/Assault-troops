@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tickDelay: 1
   _coefficientFear: 1.2
-  _spawnDelay: 3
   _finalAttackImpact: 300
   _moveDelay: 20
+  _chanceBuyExpensiveSoldier: 0.3
+  _chanceBuyRandomSoldier: 0.7
+  _chanceShootArtillery: 0.5

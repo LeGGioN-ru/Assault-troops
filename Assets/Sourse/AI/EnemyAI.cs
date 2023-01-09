@@ -12,8 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     private EnemyAITemplate _currentTemplate;
     private List<Trench> _trenches;
-    private Wallet _wallet;
     private float _passedTime;
+    private int _maxPercent = 100;
 
     private void Start()
     {
@@ -22,9 +22,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Init(List<Trench> trenches)
     {
-        _wallet = GetComponent<Wallet>();
         _trenches = trenches;
-
         enabled = true;
     }
 
@@ -42,6 +40,7 @@ public class EnemyAI : MonoBehaviour
 
         _passedTime = 0;
         TryBuySolider();
+        TryShootArtilery();
         TrenchMoveCalculate();
     }
 
@@ -51,6 +50,26 @@ public class EnemyAI : MonoBehaviour
         TryAttack();
         TryFinalAttack();
         TryWinGame();
+    }
+
+    private void TryShootArtilery()
+    {
+        foreach (SolderBuyer soldierBuyer in _soldierBuyers)
+        {
+            if (soldierBuyer.Artillery != null && soldierBuyer.IsCanBuy)
+            {
+                if (_currentTemplate.ChanceShootArtillery < Random.Range(0, _maxPercent + 1))
+                    return;
+
+                Trench trench = _trenches.Where(x => x.IsTrenchBusy(true)).OrderBy(trench => trench.Impact).FirstOrDefault();
+
+                if (trench == null)
+                    return;
+
+                Transform randomTransform = trench.GetRandomSoldierTransform();
+                soldierBuyer.Artillery.Execute(randomTransform.position);
+            }
+        }
     }
 
     private void TryFinalAttack()
@@ -123,9 +142,9 @@ public class EnemyAI : MonoBehaviour
     {
         float currentPercentBusy = _trenches.Count(trench => trench.IsTrenchBusy(true)) / _trenches.Count;
 
-        if (currentPercentBusy <= 0.25f)
+        if (currentPercentBusy <= _currentTemplate.ChanceBuyExpensiveSoldier)
             return LoseChance.Low;
-        else if (currentPercentBusy <= 0.65f)
+        else if (currentPercentBusy <= _currentTemplate.ChanceBuyRandomSoldier)
             return LoseChance.Middle;
         else
             return LoseChance.High;
