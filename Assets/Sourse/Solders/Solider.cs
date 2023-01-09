@@ -30,6 +30,11 @@ public class Solider : MonoBehaviour
         ReduceHealth(damage);
     }
 
+    public void DieFromArtillery()
+    {
+        _currentHealth = 0;
+    }
+
     private void Die()
     {
         gameObject.SetActive(false);

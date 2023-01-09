@@ -5,7 +5,6 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 {
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Vector2 _explosionRadius;
-    [SerializeField] private float _damage;
     [SerializeField] private GameObject _explosion;
 
     private RectTransform _transform;
@@ -50,7 +49,7 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         {
             if (collider.TryGetComponent(out Solider solider))
             {
-                solider.ApplyDamage(_damage);
+                solider.DieFromArtillery();
             }
         }
 
