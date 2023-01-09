@@ -6,6 +6,7 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Vector2 _explosionRadius;
     [SerializeField] private float _damage;
+    [SerializeField] private GameObject _explosion;
 
     private RectTransform _transform;
 
@@ -20,8 +21,15 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         Gizmos.DrawWireCube(Camera.main.ScreenToWorldPoint(transform.position), _explosionRadius);
     }
 
+    private void SpawnExplosion(Vector2 position)
+    {
+        _explosion.transform.position = position;
+        _explosion.SetActive(true);
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,6 +39,12 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Execute(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+    }
+
+    public void Execute(Vector2 point)
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(point, _explosionRadius, 0);
 
         foreach (var collider in colliders)
         {
@@ -40,6 +54,7 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             }
         }
 
+        SpawnExplosion(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         gameObject.SetActive(false);
     }
 }
