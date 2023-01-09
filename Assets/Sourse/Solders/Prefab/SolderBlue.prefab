@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1822686831}
   - component: {fileID: 1822686833}
   - component: {fileID: 1822686832}
+  - component: {fileID: 283416825}
   m_Layer: 0
   m_Name: SolderBlue
   m_TagString: Untagged
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03a7217126f70d44a09ef3863860be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 0}
+  _targetState: {fileID: 283416825}
 --- !u!114 &7710881663751996339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,3 +299,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 1822686833}
+--- !u!114 &283416825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710881663751996338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642898b29c97e9545a0173dacb54b21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 1822686832}
+  _attackSpeed: 0
+  _damage: 0
