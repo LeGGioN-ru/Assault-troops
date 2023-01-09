@@ -14,6 +14,7 @@ public class SolderBuyer : MonoBehaviour
 
     private float _currentTime = 0;
     private bool _isCanBuy = false;
+    private bool _isCooldown = false;
 
     public bool IsCanBuy => _isCanBuy;
     public int Cost => _cost;
@@ -48,8 +49,16 @@ public class SolderBuyer : MonoBehaviour
     {
         if (playerMoney >= _cost)
         {
-            _isCanBuy = true;
-            ChangeIsCanBuy?.Invoke(_isCanBuy);
+            if(_isCooldown == false)
+            {
+                _isCanBuy = true;
+                ChangeIsCanBuy?.Invoke(_isCanBuy);
+            }
+            else
+            {
+                _isCanBuy = false;
+                ChangeIsCanBuy?.Invoke(_isCanBuy);
+            }
         }
         else
         {
@@ -60,6 +69,7 @@ public class SolderBuyer : MonoBehaviour
 
     private IEnumerator Cooldown()
     {
+        _isCooldown = true;
         _currentTime = 0;
 
         while (_currentTime < _clickCooldown)
@@ -69,6 +79,7 @@ public class SolderBuyer : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        _isCooldown = false;
         ButtonReady?.Invoke();
     }
 
