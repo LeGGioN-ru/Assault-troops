@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467a6b88b46685e43b95d4cb190ca429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: {x: 4.2, y: 20.43, z: 0}
-  _indentPivot: {x: 2.5, y: 0.79}
+  _distance: {x: 5.25, y: 20.43, z: 0}
+  _indentPivot: {x: 3.04, y: 0.79}
 --- !u!114 &6114653467249569030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 5383385967228785653}
   - {fileID: 1254224692}
+  - {fileID: 8702674168351262900}
   _attackSpeed: 2
   _damage: 3
 --- !u!114 &1254224691

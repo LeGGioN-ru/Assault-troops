@@ -313,5 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 1822686832}
+  - {fileID: 7710881663751996339}
   _attackSpeed: 0
   _damage: 0
