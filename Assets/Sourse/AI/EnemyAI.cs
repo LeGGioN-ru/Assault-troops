@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
 
     private EnemyAITemplate _currentTemplate;
     private List<Trench> _trenches;
-    private Wallet _wallet;
     private float _passedTime;
 
     private void Start()
@@ -22,9 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Init(List<Trench> trenches)
     {
-        _wallet = GetComponent<Wallet>();
         _trenches = trenches;
-
         enabled = true;
     }
 

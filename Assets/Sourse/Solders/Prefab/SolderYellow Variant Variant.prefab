@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 8431141248937649693}
   - component: {fileID: 9082621163914742347}
   - component: {fileID: 6203737230756002932}
-  - component: {fileID: 825553528}
+  - component: {fileID: 4742937077173731954}
   m_Layer: 0
   m_Name: SolderYellow Variant Variant
   m_TagString: Untagged
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467a6b88b46685e43b95d4cb190ca429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: {x: 4.2, y: 20.43, z: 0}
-  _indentPivot: {x: 2.5, y: 0.79}
+  _distance: {x: 3.84, y: 0.7, z: 0}
+  _indentPivot: {x: 2.5, y: 0.88}
 --- !u!114 &1094526900399352866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03a7217126f70d44a09ef3863860be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 825553528}
+  _targetState: {fileID: 4742937077173731954}
 --- !u!114 &738180654964957310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,28 +294,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112953123902549556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebdac3950eba4c04d91fff912b8b4940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 9082621163914742347}
---- !u!114 &825553528
+--- !u!114 &4742937077173731954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112953123902549556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642898b29c97e9545a0173dacb54b21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 28f557e53a99d5d4895353d63ca2eea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 6203737230756002932}
-  _attackSpeed: 2
-  _damage: 1
+  _attackSpeed: 7
+  _projectile: {fileID: 4315693334177615021, guid: f594b3c4b332a0e4bb85f1e58de81f32, type: 3}
+  _direction: {x: 1, y: 0}
+  _shootPoint: {fileID: 5672175078015410556}
 --- !u!1 &6022899359261664827
 GameObject:
   m_ObjectHideFlags: 0

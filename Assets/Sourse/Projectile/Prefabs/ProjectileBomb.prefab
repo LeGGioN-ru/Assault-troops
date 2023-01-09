@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _lifeTime: 20
-  Damage: 10
-  _sizeBlowUp: {x: 2.17, y: 1.58}
+  Damage: 20
+  _sizeBlowUp: {x: 3, y: 3}
 --- !u!58 &8081150020154452296
 CircleCollider2D:
   m_ObjectHideFlags: 0
