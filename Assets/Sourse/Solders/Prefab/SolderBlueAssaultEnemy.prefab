@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_Name
-      value: SolderEnemyBlue
+      value: SolderBlueAssaultEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
       propertyPath: m_IsActive
@@ -143,5 +143,5 @@ MonoBehaviour:
   _transitions:
   - {fileID: 8359415716762079892}
   - {fileID: 2233805521575145303}
-  _attackSpeed: 2
-  _damage: 3
+  _attackSpeed: 1
+  _damage: 4

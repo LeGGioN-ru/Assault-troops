@@ -114,7 +114,7 @@ MonoBehaviour:
   _maxHealth: 100
   _isPlayerTeam: 1
   _percentMiss: 0
-  _impact: 15
+  _impact: 20
 --- !u!114 &2618459717528579885
 MonoBehaviour:
   m_ObjectHideFlags: 0
