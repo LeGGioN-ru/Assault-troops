@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 6203737230756002932}
   - component: {fileID: 4742937077173731954}
   m_Layer: 0
-  m_Name: SolderYellow Variant Variant
+  m_Name: SolderYellowProjectiler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
