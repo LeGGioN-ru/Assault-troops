@@ -18,3 +18,4 @@ MonoBehaviour:
   _moveDelay: 20
   _chanceBuyExpensiveSoldier: 0.3
   _chanceBuyRandomSoldier: 0.7
+  _chanceShootArtillery: 0.5

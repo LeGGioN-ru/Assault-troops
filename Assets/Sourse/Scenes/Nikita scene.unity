@@ -2127,12 +2127,12 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1b5bfd6725420e549967ba0bc0ff11ef, type: 2}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _soldierBuyers.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _soldierBuyers.Array.data[0]
       value: 
-      objectReference: {fileID: 1518152471}
+      objectReference: {fileID: 1518152478}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _soldierBuyers.Array.data[1]
       value: 
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0215e08bc59c845b2d5f6ab250bb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saver: {fileID: 0}
+  _saver: {fileID: 1118160719}
   _nextSceneNumber: 0
 --- !u!61 &1406976604
 BoxCollider2D:

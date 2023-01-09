@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     private EnemyAITemplate _currentTemplate;
     private List<Trench> _trenches;
     private float _passedTime;
+    private int _maxPercent = 100;
 
     private void Start()
     {
@@ -53,11 +54,18 @@ public class EnemyAI : MonoBehaviour
 
     private void TryShootArtilery()
     {
-        foreach (var soldierBuyer in _soldierBuyers)
+        foreach (SolderBuyer soldierBuyer in _soldierBuyers)
         {
             if (soldierBuyer.Artillery != null && soldierBuyer.IsCanBuy)
             {
+                if (_currentTemplate.ChanceShootArtillery < Random.Range(0, _maxPercent + 1))
+                    return;
+
                 Trench trench = _trenches.Where(x => x.IsTrenchBusy(true)).OrderBy(trench => trench.Impact).FirstOrDefault();
+
+                if (trench == null)
+                    return;
+
                 Transform randomTransform = trench.GetRandomSoldierTransform();
                 soldierBuyer.Artillery.Execute(randomTransform.position);
             }
