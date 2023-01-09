@@ -6968,7 +6968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 1658694090}
   _solderPrefab: {fileID: 5958796938043476009, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
-  _capacity: 3
+  _capacity: 40
 --- !u!4 &1658694092
 Transform:
   m_ObjectHideFlags: 0
@@ -7653,8 +7653,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: 0.0012076487
-  m_Size: 0.56610143
+  m_Value: 0.001207524
+  m_Size: 0.56613284
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7997,7 +7997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 1934099523}
   _solderPrefab: {fileID: 7710881663751996338, guid: fe8de2df72cfdcc4897eb4b98183046b, type: 3}
-  _capacity: 21
+  _capacity: 40
 --- !u!114 &1934099526
 MonoBehaviour:
   m_ObjectHideFlags: 0
