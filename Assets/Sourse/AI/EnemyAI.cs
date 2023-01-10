@@ -9,11 +9,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private List<EnemyAITemplate> _templates;
     [SerializeField] private LoseGame _loseZone;
     [SerializeField] private List<SolderBuyer> _soldierBuyers;
+    [SerializeField] private Artillery _artillery;
 
     private EnemyAITemplate _currentTemplate;
     private List<Trench> _trenches;
     private float _passedTime;
-    private int _maxPercent = 100;
+    private int _maxPercent = 1000;
 
     private void Start()
     {
@@ -24,11 +25,6 @@ public class EnemyAI : MonoBehaviour
     {
         _trenches = trenches;
         enabled = true;
-    }
-
-    public void AddSoliderBuyer(SolderBuyer solderBuyer)
-    {
-        _soldierBuyers.Add(solderBuyer);
     }
 
     private void Update()
@@ -54,22 +50,17 @@ public class EnemyAI : MonoBehaviour
 
     private void TryShootArtilery()
     {
-        foreach (SolderBuyer soldierBuyer in _soldierBuyers)
-        {
-            if (soldierBuyer.Artillery != null && soldierBuyer.IsCanBuy)
-            {
-                if (_currentTemplate.ChanceShootArtillery < Random.Range(0, _maxPercent + 1))
-                    return;
+        if (_currentTemplate.ChanceShootArtillery < Random.Range(0, _maxPercent + 1))
+            return;
 
-                Trench trench = _trenches.Where(x => x.IsTrenchBusy(true)).OrderBy(trench => trench.Impact).FirstOrDefault();
+        Trench trench = _trenches.Where(x => x.IsTrenchBusy(true)).OrderBy(trench => trench.Impact).FirstOrDefault();
 
-                if (trench == null)
-                    return;
+        if (trench == null)
+            return;
 
-                Transform randomTransform = trench.GetRandomSoldierTransform();
-                soldierBuyer.Artillery.Execute(randomTransform.position);
-            }
-        }
+        Transform randomTransform = trench.GetRandomSoldierTransform();
+        _artillery.Execute(randomTransform.position);
+        Debug.Log("ha");
     }
 
     private void TryFinalAttack()
