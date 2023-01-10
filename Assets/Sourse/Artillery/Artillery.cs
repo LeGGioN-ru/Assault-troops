@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Artillery : MonoBehaviour, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Vector2 _explosionRadius;
@@ -24,11 +24,6 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     {
         _explosion.transform.position = position;
         _explosion.SetActive(true);
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-
     }
 
     public void OnDrag(PointerEventData eventData)
