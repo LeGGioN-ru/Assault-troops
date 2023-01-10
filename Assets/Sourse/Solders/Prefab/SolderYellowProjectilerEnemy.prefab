@@ -13,7 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112953123902549556, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: m_Name
-      value: SolderYellowEnemy Variant
+      value: SolderYellowProjectilerEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618459717528579885, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
+      propertyPath: _distance.y
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2618459717528579885, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: _indentPivot.x
@@ -37,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 5254473768469148687}
     - target: {fileID: 4742937077173731954, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: _attackSpeed
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4742937077173731954, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: _direction.x

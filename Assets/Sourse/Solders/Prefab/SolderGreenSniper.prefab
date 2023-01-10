@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f989afb2403aa2f47aad84edbe231121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 40
   _isPlayerTeam: 1
   _percentMiss: 0
   _impact: 40
@@ -314,5 +314,5 @@ MonoBehaviour:
   _transitions:
   - {fileID: 1405440213577580248}
   - {fileID: 4387371175575781630}
-  _attackSpeed: 10
+  _attackSpeed: 6
   _damage: 100

@@ -20,6 +20,7 @@ public class Solider : MonoBehaviour
     private void OnEnable()
     {
         _currentHealth = _maxHealth;
+        _isInTrench = false;
     }
 
     public void ApplyDamage(float damage)

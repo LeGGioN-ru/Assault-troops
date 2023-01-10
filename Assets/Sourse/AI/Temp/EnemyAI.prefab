@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6865424936303220878}
   - component: {fileID: 6865424936303220912}
   - component: {fileID: 6865424936303220913}
-  - component: {fileID: 6865424936303220915}
   m_Layer: 0
   m_Name: EnemyAI
   m_TagString: Untagged
@@ -61,28 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e8eba97dcef424f897ba96c967332a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solderBuyer: {fileID: 6865424936303220915}
-  _tickDelay: 1
-  _coefficientFear: 2
-  _trenches:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _spawnDelay: 4
-  _finalAttackImpact: 300
---- !u!114 &6865424936303220915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865424936303220879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304e29893f1977a46935305563adac85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cost: 25
-  _playerMoney: {fileID: 6865424936303220912}
-  _view: {fileID: 0}
+  _templates: []
+  _loseZone: {fileID: 0}
+  _soldierBuyers: []
+  _artillery: {fileID: 0}

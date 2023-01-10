@@ -53,7 +53,7 @@ public class Artillery : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             }
         }
 
-        SpawnExplosion(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        SpawnExplosion(point);
         gameObject.SetActive(false);
     }
 }
