@@ -7230,6 +7230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2016135164, guid: 038f91bd5245df540ac2d9a51849a53d, type: 3}
+      propertyPath: _soundButton
+      value: 
+      objectReference: {fileID: 829812526}
     - target: {fileID: 5710198315796345813, guid: 038f91bd5245df540ac2d9a51849a53d, type: 3}
       propertyPath: m_Name
       value: Sound
@@ -8198,8 +8202,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: 0.0012074828
-  m_Size: 0.56897086
+  m_Value: 0.0012075242
+  m_Size: 0.56620526
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
