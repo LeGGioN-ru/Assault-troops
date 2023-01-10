@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 5254473768469148687}
     - target: {fileID: 4742937077173731954, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: _attackSpeed
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4742937077173731954, guid: 239da20df8cb97d459caa28d961060e2, type: 3}
       propertyPath: _direction.x

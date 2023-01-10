@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f989afb2403aa2f47aad84edbe231121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 120
   _isPlayerTeam: 1
   _percentMiss: 0
   _impact: 20
@@ -315,7 +315,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 6203737230756002932}
   - {fileID: 738180654964957310}
-  _attackSpeed: 7
+  _attackSpeed: 4
   _projectile: {fileID: 4315693334177615021, guid: f594b3c4b332a0e4bb85f1e58de81f32, type: 3}
   _direction: {x: 1, y: 0}
   _shootPoint: {fileID: 5672175078015410556}

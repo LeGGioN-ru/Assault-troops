@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blowUpDelay: 2
   _sizeBlowUp: {x: 2, y: 2}
-  _damage: 15
+  _damage: 25
   _explosion: {fileID: 6559236127326314553, guid: 8e34e98ee3968d4489ffc963ea18e038, type: 3}
 --- !u!1 &1127032683566863260
 GameObject:
