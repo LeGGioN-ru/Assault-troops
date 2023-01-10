@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Advertisement : MonoBehaviour
 {
+    [SerializeField] private AudioListener _listener;
+
     private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
@@ -20,6 +22,7 @@ public class Advertisement : MonoBehaviour
 
     public void ShowAd()
     {
+        AudioListener.volume = 0;
         InterstitialAd.Show();
     }
 }
