@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5958796938043476009, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: m_Name
-      value: SolderBlackEnemy Variant
+      value: SolderBlackSootGunEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6136039520314536425, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: _distance.x
@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7454153452175815600, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: _attackSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7454153452175815600, guid: 0701f14ff7ba69646bc35eed4d7edfc2, type: 3}
       propertyPath: _transitions.Array.size

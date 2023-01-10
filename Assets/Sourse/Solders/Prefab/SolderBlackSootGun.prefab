@@ -314,5 +314,5 @@ MonoBehaviour:
   _transitions:
   - {fileID: 674241606205260970}
   - {fileID: 1087618883350992873}
-  _attackSpeed: 5
+  _attackSpeed: 3
   _damage: 50

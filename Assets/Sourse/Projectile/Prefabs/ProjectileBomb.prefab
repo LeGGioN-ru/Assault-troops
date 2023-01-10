@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _lifeTime: 20
-  Damage: 20
-  _sizeBlowUp: {x: 3, y: 3}
+  Damage: 15
+  _sizeBlowUp: {x: 2, y: 2}
   _explosion: {fileID: 6559236127326314553, guid: 8e34e98ee3968d4489ffc963ea18e038, type: 3}
 --- !u!58 &8081150020154452296
 CircleCollider2D:
