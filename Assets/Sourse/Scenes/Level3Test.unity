@@ -2385,7 +2385,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6865424936303220878, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220878, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2548,7 +2548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146239705889566258, guid: 842ed6872d9ed574287f1a9677a225b3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6146239705889566258, guid: 842ed6872d9ed574287f1a9677a225b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4889,7 +4889,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &867276844
 MonoBehaviour:
@@ -5086,7 +5086,7 @@ Transform:
   - {fileID: 1809779713}
   - {fileID: 1980932377}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980464223
 PrefabInstance:
@@ -5685,7 +5685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389756220393475372, guid: 103e835927f083642b3d89ba3586bb58, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5389756220393475372, guid: 103e835927f083642b3d89ba3586bb58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6803,7 +6803,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421185397
 GameObject:
@@ -8690,8 +8690,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: -0.00000010376389
-  m_Size: 0.31820038
+  m_Value: -0.00000013341074
+  m_Size: 0.31891483
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9787,7 +9787,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094308446
 GameObject:
