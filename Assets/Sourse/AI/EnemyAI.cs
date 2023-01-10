@@ -140,7 +140,9 @@ public class EnemyAI : MonoBehaviour
 
     private LoseChance DefineCurrentChance()
     {
-        float currentPercentBusy = _trenches.Count(trench => trench.IsTrenchBusy(true)) / _trenches.Count;
+        float busyTrenches = _trenches.Where(x => x.IsTrenchBusy(true)).Count();
+
+        float currentPercentBusy = busyTrenches / _trenches.Count;
 
         if (currentPercentBusy <= _currentTemplate.ChanceBuyExpensiveSoldier)
             return LoseChance.Low;
