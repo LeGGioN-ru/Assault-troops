@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class BackgroundMusic : MonoBehaviour
+public class MainMusic : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> _clips;
 

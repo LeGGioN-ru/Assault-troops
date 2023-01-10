@@ -1279,6 +1279,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 829812526}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: OnSoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128917236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,7 +4613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34.24939, y: 0}
+  m_AnchoredPosition: {x: -34.24936, y: 0}
   m_SizeDelta: {x: -88.52, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &825226905
@@ -4700,6 +4712,7 @@ GameObject:
   - component: {fileID: 829812525}
   - component: {fileID: 829812524}
   - component: {fileID: 829812523}
+  - component: {fileID: 829812526}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -4771,7 +4784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829812524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 829812526}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: OnSoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829812524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4810,6 +4835,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829812521}
   m_CullTransparentMesh: 1
+--- !u!114 &829812526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829812521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cac547c05a450144aa2da048f210dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &867276839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7042,7 +7079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34.829712, y: 0}
+  m_AnchoredPosition: {x: -34.82968, y: 0}
   m_SizeDelta: {x: -89.66, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1499856856
@@ -8644,7 +8681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9208513}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024414062, y: 11.459778}
+  m_AnchoredPosition: {x: 0.00024414062, y: 11.459808}
   m_SizeDelta: {x: 1, y: -22.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813741795
@@ -8690,8 +8727,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: -0.00000010376389
-  m_Size: 0.31820038
+  m_Value: -0.000000088940475
+  m_Size: 0.3182187
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
