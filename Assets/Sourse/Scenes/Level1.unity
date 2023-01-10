@@ -9120,10 +9120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1624360023}
     m_Modifications:
-    - target: {fileID: 3051486372849968640, guid: 35af8efad9fdfe247bfc74f47a5742f7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.3319702
-      objectReference: {fileID: 0}
     - target: {fileID: 3051486373616341957, guid: 35af8efad9fdfe247bfc74f47a5742f7, type: 3}
       propertyPath: _playerMoney
       value: 
@@ -9215,10 +9211,6 @@ PrefabInstance:
     - target: {fileID: 3051486373616342010, guid: 35af8efad9fdfe247bfc74f47a5742f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3051486373625478360, guid: 35af8efad9fdfe247bfc74f47a5742f7, type: 3}
-      propertyPath: m_fontSize
-      value: 41.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35af8efad9fdfe247bfc74f47a5742f7, type: 3}
