@@ -521,13 +521,13 @@ MonoBehaviour:
   data: 0
   entries:
   - Language: en
-    Text: Assault Troops
+    Text: Pixel War
     Object: {fileID: 0}
   - Language: ru
-    Text: "\u0428\u0442\u0443\u0440\u043C\u043E\u0432\u044B\u0435 \u0412\u043E\u0439\u0441\u043A\u0430"
+    Text: "\u041F\u0438\u043A\u0441\u0435\u043B\u044C\u043D\u044B\u0435 \u0432\u043E\u0439\u043D\u044B"
     Object: {fileID: 0}
   - Language: tr
-    Text: "Sald\u0131r\u0131 Birlikleri"
+    Text: "Piksel Sava\u015F\u0131"
     Object: {fileID: 0}
 --- !u!1 &789741454
 GameObject:
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sald\u0131r\u0131 Birlikleri"
+  m_text: "Piksel Sava\u015F\u0131"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc01b7981a4ab3e4a981f463350c55d8, type: 2}
   m_sharedMaterial: {fileID: 8408939879452530856, guid: dc01b7981a4ab3e4a981f463350c55d8, type: 2}
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95.2
+  m_fontSize: 103.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1278,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1280381119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 68}
+  m_AnchoredPosition: {x: 0, y: 65}
   m_SizeDelta: {x: 326.359, y: 100.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436295129
@@ -1641,7 +1641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216, y: -63}
+  m_AnchoredPosition: {x: 0.000061035, y: -63}
   m_SizeDelta: {x: 261.087, y: 93.888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779207288
@@ -2025,6 +2025,10 @@ PrefabInstance:
     - target: {fileID: 3392079538820735853, guid: dd17416a5a6c56c488a8f63aa0844150, type: 3}
       propertyPath: m_Name
       value: LoadScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392079538820735853, guid: dd17416a5a6c56c488a8f63aa0844150, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd17416a5a6c56c488a8f63aa0844150, type: 3}

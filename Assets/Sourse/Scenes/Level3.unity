@@ -5283,7 +5283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654846256198ffe47b191ebfc1ad6de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startMoney: 100000
+  _startMoney: 100
   _incomeTime: 1
   _moneyIncome: 10
 --- !u!1 &958967550
@@ -9354,8 +9354,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: -0.00000002964682
-  m_Size: 0.31812826
+  m_Value: -0.000000044470237
+  m_Size: 0.31829324
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
