@@ -14,6 +14,6 @@ public class GrenadeThrowState : State
 
     private void OnEnable()
     {
-        Instantiate(_grenade, transform).Grenade.Init(_isPlayerTeam);
+        Instantiate(_grenade, transform.position, Quaternion.identity).Grenade.Init(_isPlayerTeam);
     }
 }
