@@ -1272,9 +1272,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 829812526}
-        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: OnSoundButton
+      - m_Target: {fileID: 128917238}
+        m_TargetAssemblyTypeName: GamePauser, Assembly-CSharp
+        m_MethodName: DisableSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gamePause: {fileID: 170702202}
+  _soundButton: {fileID: 829812526}
 --- !u!1 &129399650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,7 +2276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220912, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _startMoney
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _loseZone
@@ -2328,7 +2329,7 @@ PrefabInstance:
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _templates.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 1b5bfd6725420e549967ba0bc0ff11ef, type: 2}
+      objectReference: {fileID: 11400000, guid: c04c581fe0955454e8e6e3067feccc19, type: 2}
     - target: {fileID: 6865424936303220913, guid: 7c41696489e500049a630224edf4b247, type: 3}
       propertyPath: _soldierBuyers.Array.size
       value: 3
@@ -5171,7 +5172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654846256198ffe47b191ebfc1ad6de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startMoney: 1000000
+  _startMoney: 100
   _incomeTime: 1
   _moneyIncome: 10
 --- !u!1 &958967550
@@ -9148,8 +9149,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: -0.00000008379229
-  m_Size: 0.39749318
+  m_Value: -0.00000002094807
+  m_Size: 0.39744255
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
