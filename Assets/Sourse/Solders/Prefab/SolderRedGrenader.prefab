@@ -159,7 +159,7 @@ MonoBehaviour:
   - {fileID: 8633437666598592369}
   - {fileID: 5119002194927505403}
   - {fileID: 5383385967228785653}
-  _speed: 1
+  _speed: 1.15
   _direction: {x: 1, y: 0}
 --- !u!114 &8633437666598592369
 MonoBehaviour:

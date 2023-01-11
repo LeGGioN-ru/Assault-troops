@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5653296878308061769, guid: f49cb201315d0aa478a2a207e50d7710, type: 3}
       propertyPath: m_Name
-      value: SolderRedEnemy Variant
+      value: SolderRedGrenaderEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49cb201315d0aa478a2a207e50d7710, type: 3}

@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1985562980444996985, guid: b5a825001cbf2604da823bbe4ae2c58b, type: 3}
       propertyPath: m_Name
-      value: SolderGreenEnemy Variant
+      value: SolderGreenSniperEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6704868944246952132, guid: b5a825001cbf2604da823bbe4ae2c58b, type: 3}
       propertyPath: _direction.x

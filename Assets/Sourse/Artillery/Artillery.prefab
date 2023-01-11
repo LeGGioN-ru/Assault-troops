@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
-  _explosionRadius: {x: 1, y: 1}
+  _explosionRadius: {x: 0.6, y: 0.6}
   _explosion: {fileID: 0}
 --- !u!1 &5089842003653698074
 GameObject:
