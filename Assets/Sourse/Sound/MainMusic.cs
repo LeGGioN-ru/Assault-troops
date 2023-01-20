@@ -11,14 +11,17 @@ public class MainMusic : MonoBehaviour
     private void Start()
     {
         _sourse = GetComponent<AudioSource>();
+
+        //_sourse.clip = _clips[0];
+        _sourse.Play();
     }
 
     private void Update()
     {
-        if (_sourse.isPlaying == false)
+        /*if (_sourse.isPlaying == false)
         {
             ChooseRandomClip();
-        }
+        }*/
     }
 
     private void ChooseRandomClip()

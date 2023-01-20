@@ -4935,6 +4935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cac547c05a450144aa2da048f210dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundOn: {fileID: -1708682772, guid: bfee273ef0801a542b0989caf5319e42, type: 3}
+  _soundOff: {fileID: -1023554056, guid: bfee273ef0801a542b0989caf5319e42, type: 3}
 --- !u!1 &867276839
 GameObject:
   m_ObjectHideFlags: 0
@@ -9206,8 +9208,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635503365}
   m_HandleRect: {fileID: 1635503364}
   m_Direction: 0
-  m_Value: -0.000000083792294
-  m_Size: 0.400195
+  m_Value: -0.000000104740366
+  m_Size: 0.39740315
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9841,6 +9843,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5710198315796345819, guid: 038f91bd5245df540ac2d9a51849a53d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 053b5b2ba0562914090285e121158bf9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038f91bd5245df540ac2d9a51849a53d, type: 3}
 --- !u!1 &1978058244
